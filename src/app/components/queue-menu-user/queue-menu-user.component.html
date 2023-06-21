@@ -1,0 +1,37 @@
+<!-- <div *ngFor="let item of selectSymbol(); let idx = index">
+	<div (click)="selectedItem(idx)">{{symbol}}{{idx+1}} {{item[(lang==="en")?"en":((lang==="ru")?"ru":"uz")]}}</div>
+</div> -->
+<div class="bolim">
+    <div class="bolim-group">
+        <div class="bolim-inner" *ngFor="let item of selectSymbol(); let idx = index" (click)="selectedItem(idx)">
+             <div class="bolim1">{{symbol}}{{idx+1}}</div>  
+             <div class="bolim2">{{item[(lang==="en")?"en":((lang==="ru")?"ru":"uz")]}}</div> 
+        </div>
+    </div>
+</div> 
+<div>
+	<div id="queue_print">
+		<div>Sizning raqamingiz</div>
+		<div>{{queue_number}}</div>
+		<div>O‘zlashtirish natijalari(baho) to‘g‘risida ma'lumot</div>
+		<div>Sizdan oldin {{queue_differ}} ta navbat bor</div>
+		<div>Operator chaqirishini kuting</div>
+	</div>
+</div>
+<svg class="back_button" (click)="navigateBack()" version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="250" height="150" viewBox="0 0 512.000000 512.000000"
+ preserveAspectRatio="xMidYMid meet">
+
+<g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+fill="#ffffff" stroke="none">
+<path class="icon" d="M2427 3379 c-19 -11 -978 -744 -1054 -806 -51 -41 -55 -68 -15 -105
+54 -50 1066 -821 1084 -826 10 -2 28 4 38 13 19 17 20 32 20 243 l0 225 133
+-6 c289 -14 559 -77 759 -178 131 -66 225 -142 330 -267 31 -38 62 -41 83 -9
+13 20 13 42 5 157 -18 235 -75 424 -175 580 -65 103 -210 243 -310 301 -204
+119 -440 179 -704 179 l-121 0 0 239 c0 237 0 240 -22 255 -26 19 -27 19 -51
+5z m-10 -590 c12 -10 48 -13 148 -11 150 4 310 -16 443 -54 387 -112 623 -385
+686 -791 14 -93 21 -91 -64 -21 -135 110 -358 206 -600 257 -149 32 -215 40
+-405 52 -244 14 -224 33 -227 -222 l-3 -200 -462 353 c-254 194 -461 358 -459
+363 1 6 209 168 462 362 l459 352 3 -214 c2 -182 5 -215 19 -226z"/>
+</g>
+</svg>	

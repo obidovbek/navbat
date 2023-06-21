@@ -1,0 +1,53 @@
+<!-- Container-fluid starts-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Ichki menyu qo‘shish</h5>
+                </div>
+                <div class="card-body">
+                    <div class="needs-validation">
+                        <div class="form-group row">
+                            <label for="validationCustom1" class="col-xl-3 col-md-4"><span>*</span> Sarlavha uz</label>
+                            <textarea class="form-control col-md-8" [(ngModel)]="dataService.menuNewSub.uz" id="validationCustom1" required=""></textarea>
+                        </div>
+                        <div class="form-group row">
+                            <label for="validationCustom11" class="col-xl-3 col-md-4"><span>*</span> Sarlavha ru</label>
+                            <textarea class="form-control col-md-8" [(ngModel)]="dataService.menuNewSub.ru" id="validationCustom11" required=""></textarea>
+                        </div>
+                        <div class="form-group row">
+                            <label for="validationCustom12" class="col-xl-3 col-md-4"><span>*</span> Sarlavha en</label>
+                            <textarea class="form-control col-md-8" [(ngModel)]="dataService.menuNewSub.en" id="validationCustom12" required=""></textarea>
+                        </div>
+                        <button type="button" class="btn btn-primary" [disabled]="!dataService.menuNewSub.uz||!dataService.menuNewSub.ru||!dataService.menuNewSub.en" (click)="addMenuSub()">Qo'shish</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Container-fluid Ends-->
+<!-- Container-fluid starts-->
+<div class="container-fluid" *ngIf="!loading">
+    <div class="card">
+        <div class="card-header">
+            <h5>Ichki menyu</h5>
+        </div>
+        <div class="card-body">
+            <div id="batchDelete" class="category-table custom-datatable transcation-datatable user-image">
+                <div class="table-responsive">
+                    <ng2-smart-table 
+                        [settings]="settings" 
+                        [source]="menu_sub_list"
+                        (deleteConfirm)="onDeleteConfirm($event)"
+                    ></ng2-smart-table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="lds-wrap" *ngIf="loading">
+    <div class="lds-dual-ring"></div>
+</div>
+<!-- Container-fluid Ends-->

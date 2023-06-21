@@ -1,0 +1,174 @@
+<div class="container-fluid" *ngIf="!loading">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card tab2-card">
+                <div class="card-header">
+                    <h5>Yangi Foydalanuvchi</h5>
+                </div>
+                <div class="card-body tab2-card">
+                    <form [formGroup]="registerForm" (ngSubmit)="register()" class="needs-validation user-add" novalida>
+                        <div class="form-group row">
+                            <label for="validationCustom1" class="col-xl-3 col-md-4">
+                                <span>*</span>
+                                Ismi
+                            </label>
+                            <div class="col-md-8">
+                                <input 
+                                    class="form-control"
+                                    formControlName="first_name" 
+                                    placeholder="Ismi" 
+                                    type="text"
+                                    id="validationCustom1"
+                                >
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="validationCustom2" class="col-xl-3 col-md-4">
+                                <span>*</span>
+                                Familiyasi
+                            </label>
+                            <div class="col-md-8">
+                                <input 
+                                    class="form-control"
+                                    formControlName="last_name" 
+                                    placeholder="Familiyasi" 
+                                    type="text"
+                                    id="validationCustom2"
+                                >
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="validationCustom21" class="col-xl-3 col-md-4">
+                                Sharifi
+                            </label>
+                            <div class="col-md-8">
+                                <input 
+                                    class="form-control"
+                                    formControlName="patronymic" 
+                                    placeholder="Sharifi" 
+                                    type="text"
+                                    id="validationCustom21"
+                                >
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="validationCustom3" class="col-xl-3 col-md-4">
+                                <span>*</span>
+                                email
+                            </label>
+                            <div class="col-md-8">
+                                <input 
+                                    class="form-control"
+                                    formControlName="email" 
+                                    placeholder="email" 
+                                    type="email"
+                                    id="validationCustom3"
+                                >
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="validationCustom4" class="col-xl-3 col-md-4">
+                                <span>*</span>
+                                Parol
+                            </label>
+                            <div class="col-md-8">
+                                <input 
+                                    class="form-control"
+                                    formControlName="password" 
+                                    placeholder="parol" 
+                                    type="password"
+                                    id="validationCustom4"
+                                >
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="validationCustom211" class="col-xl-3 col-md-4">
+                                <span>*</span>
+                                Qabul raqami
+                            </label>
+                            <div class="col-md-8">
+                                <input 
+                                    class="form-control"
+                                    formControlName="officer_id" 
+                                    placeholder="Qabul raqami" 
+                                    type="text"
+                                    id="validationCustom211"
+                                >
+                            </div>
+                        </div>
+                        <div class="form-group row" formArrayName="services"
+                            *ngFor="let service of servicesFormArray.controls; let i = index">
+                            <div class="col-md-8">
+                                <div class="checkbox checkbox-primary">
+                                    <input id="checkbox-primary-2{{i}}" [formControlName]="i" type="checkbox">
+                                    <label for="checkbox-primary-2{{i}}">{{servicesData[i].title}}</label>
+                                </div>
+                            </div>
+                        </div>
+<!--                           <label formArrayName="services" *ngFor="let service of servicesFormArray.controls; let i = index">
+                            <input type="checkbox" [formControlName]="i">
+                            {{servicesData[i].name}}
+                          </label> -->
+                        <div class="pull-left">
+                            <button type="submit" class="btn btn-primary" [disabled]="!registerForm.valid || loading">
+                                Qo'shish<span *ngIf="loading">...</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="lds-wrap" *ngIf="loading">
+    <div class="lds-dual-ring"></div>
+</div>
+<!-- <div class="page-wrapper">
+    <div class="authentication-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 p-0 card-right">
+                    <div class="card tab2-card">
+                        <div class="card-body">
+                                            <form [formGroup]="registerForm" (ngSubmit)="register()"
+                                                class="form-horizontal auth-form" novalidate>
+                                                <div class="form-group">
+                                                    <input type="text"
+                                                        class="form-control" placeholder="First Name" required="" formControlName="first_name"
+                                                        id="exampleInputEmail12">
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="text"
+                                                        class="form-control" placeholder="Last Name" required="" formControlName="last_name">
+                                                </div>
+                                                <div class="form-group">
+                                                    <input required="" type="email"
+                                                        class="form-control" placeholder="email"
+                                                        id="exampleInputEmail1" formControlName="email">
+                                                </div>
+                                                <div class="form-group">
+                                                    <input required="" formControlName="password" type="password"
+                                                        class="form-control" placeholder="Password">
+                                                </div>
+                                                <div class="form-terms">
+                                                    <div class="custom-control custom-checkbox mr-sm-2">
+                                                        <input type="checkbox" class="custom-control-input"
+                                                            id="customControlAutosizing1" formControlName="acceptTerms">
+                                                        <label class="custom-control-label"
+                                                            for="customControlAutosizing1"><span>I agree all statements
+                                                                in <a href="javascript:void(0)" class="pull-right">Terms
+                                                                    &amp;
+                                                                    Conditions</a></span></label>
+                                                    </div>
+                                                </div>
+                                                <div class="form-button">
+                                                    <button class="btn btn-primary" type="submit" [disabled]="!registerForm.valid">Register</button>
+                                                </div>
+                                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->

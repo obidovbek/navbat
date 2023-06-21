@@ -1,0 +1,36 @@
+<!-- Container-fluid starts-->
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-header" *ngIf="tmp.emptyPage">
+            <h5>
+              Ma'lumot yo'q
+            </h5>
+        </div>
+        <div *ngIf="!tmp.emptyPage && !tmp.loading">
+            <div class="card-header">
+                <h5>Navbat</h5>
+            </div>
+            <div class="card-body">
+                <div class="btn-popup pull-right">
+                    <button type="button" class="btn btn-primary" (click)="nextItem()">Kiyingi</button>
+                    <!-- <button type="button" class="btn btn-primary" (click)="statistics()">Statistika</button> -->
+                </div>
+<!--                 <div class="btn-popup pull-right">
+                    <a class="btn btn-secondary" [routerLink]="'/products/physical/add-product'">Mahsulot qo'shish</a>
+                </div> -->
+                <div id="batchDelete" class="category-table custom-datatable transcation-datatable user-image">
+                    <div class="table-responsive">
+                        <ng2-smart-table 
+                            [settings]="settings" 
+                            [source]="dataSource"
+                        ></ng2-smart-table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="lds-wrap" *ngIf="tmp.loading">
+    <div class="lds-dual-ring"></div>
+</div>
+<!-- Container-fluid Ends-->
