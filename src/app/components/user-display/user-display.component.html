@@ -4,11 +4,11 @@
     <div class="main">
       <!-- <video class="video" width="100%" loop controls autoplay> -->
         <!-- <source src="video/1.mp4" type="video/mp4"> -->
-        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/I8gQn5cYEuU?autoplay=1&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        <!-- <iframe style="border-radius: 5px;" width="100%" height="100%" src="https://www.youtube.com/embed/XhbeAAmgEHw?autoplay=1&loop=1&playlist=XhbeAAmgEHw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+        <!-- <iframe width="100%" height="100%" src="https://www.youtube.com/embed/I8gQn5cYEuU?autoplay=1&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+        <iframe style="border-radius: 5px;" width="100%" height="100%" src="https://www.youtube.com/embed/XhbeAAmgEHw?autoplay=1&loop=1&playlist=XhbeAAmgEHw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <!-- </video> -->
     </div>
-    <div class="advert" *ngIf="service_used_number">Xizmatdan {{service_used_number}} marta foydalanildi. <a style="color:black;text-decoration:underline " href="http://192.168.10.0/que/statistics" target="_blank">Statistika</a></div>
+    <div class="advert" *ngIf="service_used_number">Xizmatdan {{service_used_number}} marta foydalanildi. <a style="color:black;text-decoration:underline " href="https://navbat.ferpi.uz/statistics" target="_blank">Statistika</a></div>
 
     <!-- Ismlar -->
     <div class="talon">CHEK</div>
@@ -24,8 +24,8 @@
     <div class="section2 b5"><span *ngIf="current_queues_loop[4]">{{current_queues_loop[4].officer_id}}</span></div>
     <div class="section2 b6"><span *ngIf="current_queues_new">{{current_queues_new.officer_id}}</span></div>
     <audio #myAudio>
-      <source src="http://192.168.10.0/que/assets/ringtones/new_user.ogg" type="audio/ogg">
-      <source scr="http://192.168.10.0/que/assets/ringtones/new_user.mp3" type="audio/mpeg">
+      <source src="https://navbat.ferpi.uz/assets/ringtones/new_user.ogg" type="audio/ogg">
+      <source scr="https://navbat.ferpi.uz/assets/ringtones/new_user.mp3" type="audio/mpeg">
     </audio>
 <!-- <button (click)="mytest()">Play</button> -->
   </div>

@@ -29,7 +29,7 @@ export class QueueMenuUserComponent implements OnInit {
     private router: Router,
     public print: NgxPrintElementService
   	) {
-    if(!this.dataService.selected.lang)this.router.navigateByUrl('/language-user');
+    if(!this.dataService.selected.lang)this.router.navigateByUrl('/#/infokios');
     this.symbol = this.dataService.menu[this.dataService.selected.index].symbol;
 
   }
@@ -67,7 +67,7 @@ export class QueueMenuUserComponent implements OnInit {
           this.dataService.changes = [];
           localStorage.setItem("changes", JSON.stringify(this.dataService.changes));
           localStorage.setItem("menu", JSON.stringify(res.menu));
-          this.router.navigateByUrl('/language-user');
+          this.router.navigateByUrl('/#/infokios');
         }else{
           alert("Nimadur hato yana bir bor urinib ko‘ring!");
         }
@@ -75,7 +75,7 @@ export class QueueMenuUserComponent implements OnInit {
         console.log('oflayn');
         this.dataService.menu[this.dataService.selected.index].inner_menu[idx].queue.overall++;
         localStorage.setItem("changes", JSON.stringify(this.dataService.changes));
-          this.router.navigateByUrl('/language-user');
+          this.router.navigateByUrl('/#/infokios');
     });
     // console.log(this.symbol, (this.dataService.menu[this.dataService.selected.index].inner_menu[idx])[(this.lang==="en")?"en":((this.lang==="ru")?"ru":"uz")])
     this.queue_number = this.dataService.menu[this.dataService.selected.index].symbol + (idx+1).toString() + this.dataService.menu[this.dataService.selected.index].inner_menu[idx].queue.overall;
@@ -193,7 +193,7 @@ export class QueueMenuUserComponent implements OnInit {
       queue_print +=  "</svg></div>";
 
       // queue_print += "<div style='margin-top: 15px; width: 100px; height: 60px; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background-color: #000; border-radius: 26%;'></div>"
-      // queue_print += "<img src='http://192.168.10.0/que/assets/images/queue/logo.png'>";
+      // queue_print += "<img src='https://navbat.ferpi.uz/assets/images/queue/logo.png'>";
       queue_print += "</div>";
       
 
@@ -209,8 +209,10 @@ export class QueueMenuUserComponent implements OnInit {
 
       window.print();
       window.close();
-
-      window.location.reload();
+      this.router.navigate(['/infokios']).then(() => {
+        // After navigation is successful, reload the page
+        window.location.reload();
+      });
   }
 }
     

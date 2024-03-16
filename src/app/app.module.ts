@@ -15,7 +15,7 @@ import { SettingModule } from './components/setting/setting.module';;
 import { ReportsModule } from './components/reports/reports.module';
 import { AuthModule } from './components/auth/auth.module';
 
-
+import {LocationStrategy, HashLocationStrategy} from '@angular/common';
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFirestoreModule } from "@angular/fire/firestore";
 import { AngularFireModule } from "@angular/fire";
@@ -34,7 +34,7 @@ import 'firebase/firestore';
 // import { MatSliderModule } from '@angular/material/slider';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 // const config: SocketIoConfig = { url: 'http://213.230.99.94:55000', options: { transports : ['websocket'] } };
-const config: SocketIoConfig = { url: 'http://192.168.10.0:3001', options: { transports : ['websocket'] } };
+const config: SocketIoConfig = { url: 'wss://ferpi.tsnqb.uz/socket.io', options: { transports : ['websocket'] } };
 
 @NgModule({
   declarations: [
@@ -59,7 +59,9 @@ const config: SocketIoConfig = { url: 'http://192.168.10.0:3001', options: { tra
     HttpClientModule,
     SocketIoModule.forRoot(config),
   ],
-  providers: [],
+  providers: [
+    {provide: LocationStrategy, useClass: HashLocationStrategy},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

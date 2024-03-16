@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpService } from 'src/app/shared/service/http.service';
 import { AuthService } from 'src/app/shared/service/auth.service';
 import { DataService } from 'src/app/shared/service/data.service';
-import { Socket } from 'ngx-socket-io';
+import { Socket } from 'ngx-socket-io'
 import { Observable, BehaviorSubject } from 'rxjs';
 // import { NativeRingtones } from '@ionic-native/native-ringtones/ngx';
 @Injectable({
@@ -24,33 +24,32 @@ export class WebsocketService {
     // this.messaging.next(0);
   }
   websocket_server;
-  websocket_connection(user){
-      if(!user)return;
-      this.socket.connect();
- 
-      // let name = `user-${new Date().getTime()}`;
-      // this.currentUser = name;
-      
-      this.socket.emit('set-name-queue', user.token);
-      //  this.socket.fromEvent('users-changed').subscribe(data => {
-      //   let user = data['user'];
-      //   if (data['event'] === 'left') {
-      //     console.log('User left: ' + user, data['users'])
-      //     // this.showToast('User left: ' + user);
-      //   } else {
-      //     console.log('User joined: ' + user, data['users'])
-      //     // this.showToast('User joined: ' + user);
-      //   }
-      // });
-      this.socket.fromEvent('queue_next_user').subscribe(data => {
-        console.log('queue_next_user',data);
-        this.nextUserDisplay.next(data);
-      });
-      this.socket.fromEvent('queue_send_officer').subscribe(data => {
-        console.log('queue_send_officer',data);
-      });
-   
-  }
+    websocket_connection(user){
+        if(!user)return;
+        this.socket.connect();
+        // let name = `user-${new Date().getTime()}`;
+        // this.currentUser = name;
+        console.log('socket connected')
+        this.socket.emit('set-name-queue', user.token);
+        //  this.socket.fromEvent('users-changed').subscribe(data => {
+        //   let user = data['user'];
+        //   if (data['event'] === 'left') {
+        //     console.log('User left: ' + user, data['users'])
+        //     // this.showToast('User left: ' + user);
+        //   } else {
+        //     console.log('User joined: ' + user, data['users'])
+        //     // this.showToast('User joined: ' + user);
+        //   }
+        // });
+        this.socket.fromEvent('queue_next_user').subscribe(data => {
+          console.log('queue_next_user',data);
+          this.nextUserDisplay.next(data);
+        });
+        this.socket.fromEvent('queue_send_officer').subscribe(data => {
+          console.log('queue_send_officer',data);
+        });
+    
+    }
   queue_next(obj){
     this.socket.emit('queue_next', obj);
   }

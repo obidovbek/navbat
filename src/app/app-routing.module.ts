@@ -9,7 +9,7 @@ import { AuthGuard } from './guards/auth.guard';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/language-user',
+    redirectTo: '/default',
     pathMatch: 'full'
   },
   {
@@ -43,7 +43,7 @@ const routes: Routes = [
     }
   },
   {
-    path: 'user-display',
+    path: 'display',
     loadChildren: () => import('./components/user-display/user-display.module').then(m => m.UserDisplayModule),
     data: {
       breadcrumb: "Foydalanuvchi ekrani"
@@ -58,10 +58,10 @@ const routes: Routes = [
       loadChildren: () => import('./components/queue-menu-user/queue-menu-user.module').then(m => m.QueueMenuUserModule),
   },
   {
-      path: 'language-user',
+      path: 'infokios',
       loadChildren: () => import('./components/language-user/language-user.module').then(m => m.LanguageUserModule),
   },
-  {path: '**', redirectTo: '/language-user'},
+  {path: '**', redirectTo: '/default'},
 ];
 
 @NgModule({

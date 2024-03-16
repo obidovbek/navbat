@@ -23,19 +23,19 @@ export const environment = {
        path: "http://tsnqb.uz/db_ferpi/2022/edit_user_account.php",
     },
     get_menu: {
-       path: "http://192.168.10.0/queue/navbat-db/get_data.php",
+       path: "https://navbat.ferpi.uz/db/get_data.php",
     },
     add_queue: {
-       path: "http://192.168.10.0/queue/navbat-db/add_queue.php",
+       path: "https://navbat.ferpi.uz/db/add_queue.php",
     },
     update_menu: {
-       path: "http://192.168.10.0/queue/navbat-db/update_menu.php",
+       path: "https://navbat.ferpi.uz/db/update_menu.php",
     },
     officer_next_item: {
-       path: "http://192.168.10.0/queue/navbat-db/officer_next_item.php",
+       path: "https://navbat.ferpi.uz/db/officer_next_item.php",
     },
     getStatistics: {
-       path: "http://192.168.10.0/queue/navbat-db/get_statistics.php",
+       path: "https://navbat.ferpi.uz/db/get_statistics.php",
     },
   }
 };
