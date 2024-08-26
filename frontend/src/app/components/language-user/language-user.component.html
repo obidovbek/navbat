@@ -1,0 +1,12 @@
+<!-- <div (click)="selectLanguage('uz')">O‘zbekcha</div>
+<div (click)="selectLanguage('ru')">Русский</div>
+<div (click)="selectLanguage('en')">English</div> -->
+
+<div class="lang">
+  <!-- <img class="img" alt=""> -->
+  <div [ngClass]="environment.otm === 'tsuos' ? 'img-tsuos-logo' : 'img'"></div>
+  <p class="lang-text">Kelajakni birgalikda quramiz!</p>
+  <div (click)="selectLanguage('uz')" class="lang-inner">O'zbekcha</div>
+  <div (click)="selectLanguage('ru')" class="lang-inner">Русский</div>
+  <div (click)="selectLanguage('en')" class="lang-inner">English</div>
+</div>

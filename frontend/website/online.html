@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- head-icon -->
+    <link rel="shortcut icon" type="image/png" href="./images/logo.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+    <!-- preloader -->
+    <link rel="stylesheet" href="css/preloader/preloader.min.css">
+    <!-- swiper -->
+    <link rel="stylesheet" href="css/swiper/swiper-bundle.min.css">
+    <!-- style -->
+    <link rel="stylesheet" href="css/info.css">
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <!-- bootstrap-grid -->
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-grid.min.css">
+    <title>Online JPS location</title>
+</head>
+
+<body>
+    <!-- preloader -->
+    <div id="preloader">
+        <div class="wrap">
+            <h1>tyutorfarpi</h1>
+        </div>
+    </div>
+    <!-- preloader ends -->
+
+    <!-- header -->
+    <section id="header">
+        <a href="https://ferpi.uz"><img src="images/logoPolitexDark.png" alt="logo"></a>
+        <nav>
+            <ul id="navbar" class="navbar">
+                <li><a href="index.html">Bosh sahifa</a></li>
+                <li><a href="info.html">Umumiy ma'lumot</a></li>
+                <li>
+                    <a href="#">Fakultetlar</a>
+                    <div class="dropdown">
+                        <div class="navbar-drop">
+                            <div class="dropdown-links">
+                                <div class="drop-item1">
+                                    <div class="drop-img">
+                                        <i class="fa-solid fa-graduation-cap"></i>
+                                        <h3>Fakultetlar</h3>
+                                    </div>
+                                    <div class="drop-text">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias eius temporibus nostrum nulla explicabo maiores.
+                                    </div>
+                                </div>
+                                <div class="drop-item2">
+                                    <a class="dropdown-link" href="#">Mexanika-mashinasozlik</a>
+                                    <a class="dropdown-link" href="#">Energetika</a>
+                                    <a class="dropdown-link" href="#">Kimyo texnologiya</a>
+                                    <a class="dropdown-link" href="#">Qurilish</a>
+                                </div>
+                                <div class="drop-item2 drop-item3">
+                                    <a class="dropdown-link" href="faculty.html">Ishlab-chiqarishda boshqaruv</a>
+                                    <a class="dropdown-link" href="#">Yengil sanoat va to'qimachilik</a>
+                                    <a class="dropdown-link" href="#">arxitektura va quriish materiallari</a>
+                                    <a class="dropdown-link" href="#">kompyuterlashgn loyiha tizimlari</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="online.html">Online</a></li>
+            </ul>
+        </nav>
+        <!-- hamburger -->
+        <div class="hamburger">
+            <div class="hamburger-btn"></div>
+        </div>
+    </section>
+
+    <div class="online-track">
+        <h1 class="online-kuzatuv">Online Kuzatuv</h1>
+
+        <!-- Swiper -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="images/online/1.png" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/online/2.jpg" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/online/3.jpg" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/online/1.png" />
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+    <!-- footer-up -->
+    <div class="footer-up">
+        <div class="footer-up__inner footer-up__inner1">
+            <img src="images/logoPolitexWhite.png" alt="">
+        </div>
+        <div class="footer-up__inner footer-up__inner2">
+            <div class="footer-up__links">
+                <p href="#"> <i class="fa-solid fa-phone"></i> 8 (373) 241 12 06</p>
+                <p href="#"> <i class="fa-solid fa-at"></i> ferpi_info@edu.uz</p>
+                <div class="footer-up__links-inner">
+                    <a href="#"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="https://www.facebook.com/Farpi_press-110544218090177/?ref=pages_you_manage"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.youtube.com/c/FarpiLive"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-up__inner footer-up__inner3">
+            <a class="footer-up__contact" href="https://ferpi.uz">Universitet bilan bog'lanish <i class="fa-solid fa-angles-right"></i></a>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer id="footer" class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row gy-4">
+                    <div class="col-lg-5 col-md-12 footer-info">
+                        <a href="index.html" class="logo">
+                            <img src="images/logo.png" alt="">
+                        </a>
+                        <div class="social-links mt-3">
+                            <a href="#"><i class="fa-brands fa-telegram"></i></a>
+                            <a href="https://www.facebook.com/Farpi_press-110544218090177/?ref=pages_you_manage"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="https://www.youtube.com/c/FarpiLive"><i class="fa-brands fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-6 footer-links">
+                        <h4>Foydali havolalar</h4>
+                        <ul>
+                            <li><i class="fa-solid fa-chevron-right"></i> <a href="index.html">Bosh sahifa</a></li>
+                            <li><i class="fa-solid fa-chevron-right"></i> <a href="info.html">Umumiy ma'lumot</a></li>
+                            <li><i class="fa-solid fa-chevron-right"></i> <a href="online.html">Online</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-6 footer-links">
+                        <h4>Xizmatlar</h4>
+                        <ul>
+                            <li><i class="fa-solid fa-chevron-right"></i> <a href="https://karyera.ferpi.uz/index.html#">Bo&#039;sh ish o&#039;rinlari</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start footer-contact">
+                        <h4>Bog'lanish</h4>
+                        <p>Farg'ona politextnika instituti <br> 150107, Farg'ona shahar, Farg'ona ko'chasi 86-uy <br>
+                            <strong>Phone:</strong> 8 (373) 241 12 06<br>
+                            <strong>Email:</strong> ferpi_info@edu.uz<br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright 2001-2021 <strong><span>Farg'ona politextnika instituti.</span></strong>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- jquery -->
+    <script src="js/jquery/jquery.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="js/swiper/swiper-bundle.min.js"></script>
+    <!-- script -->
+    <script src="js/online.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+//ferpi///////////
+// export const environment = {
+//   production: true,
+//   url: 'https://navbat.ferpi.uz',
+//   otm: 'ferpi',
+//   otm_name:
+//     "Farg'ona Politexnika Instituti ta'lim sifatini nazorat qilish bo'limi",
+//   firebaseConfig: {
+//     // pvorey
+//     apiKey: 'AIzaSyBmzKSP6a7bHTJWRZTqRgF3u8ucSJB2_fg',
+//     authDomain: 'pvorey.firebaseapp.com',
+//     databaseURL:
+//       'https://pvorey-default-rtdb.asia-southeast1.firebasedatabase.app',
+//     projectId: 'pvorey',
+//     storageBucket: 'pvorey.appspot.com',
+//     messagingSenderId: '975847085157',
+//     appId: '1:975847085157:web:5008868ba373c480ffa28c',
+//     measurementId: 'G-GRE7FMXH99',
+//   },
+//   http: {
+//     setNewPvo: {
+//       path: 'http://tsnqb.uz/db_ferpi/2022/set_new_pvo.php',
+//     },
+//     removePvo: {
+//       path: 'http://tsnqb.uz/db_ferpi/2022/remove_pvo.php',
+//     },
+//     editUserAccaunt: {
+//       path: 'http://tsnqb.uz/db_ferpi/2022/edit_user_account.php',
+//     },
+//     get_menu: {
+//       path: 'https://navbat.ferpi.uz/db/get_data.php',
+//     },
+//     add_queue: {
+//       path: 'https://navbat.ferpi.uz/db/add_queue.php',
+//     },
+//     update_menu: {
+//       path: 'https://navbat.ferpi.uz/db/update_menu.php',
+//     },
+//     officer_next_item: {
+//       path: 'https://navbat.ferpi.uz/db/officer_next_item.php',
+//     },
+//     getStatistics: {
+//       path: 'https://navbat.ferpi.uz/db/get_statistics.php',
+//     },
+//   },
+// };
+
+//tsuos///////////
+export const environment = {
+  production: true,
+  otm: 'tsuos',
+  otm_name: 'Toshkent Davlat sharqshunoslik universiteti',
+  url: 'https://navbat.tsuos.uz',
+  firebaseConfig: {
+    // pvorey
+    apiKey: 'AIzaSyBmzKSP6a7bHTJWRZTqRgF3u8ucSJB2_fg',
+    authDomain: 'pvorey.firebaseapp.com',
+    databaseURL:
+      'https://pvorey-default-rtdb.asia-southeast1.firebasedatabase.app',
+    projectId: 'pvorey',
+    storageBucket: 'pvorey.appspot.com',
+    messagingSenderId: '975847085157',
+    appId: '1:975847085157:web:5008868ba373c480ffa28c',
+    measurementId: 'G-GRE7FMXH99',
+  },
+  http: {
+    setNewPvo: {
+      path: 'http://tsnqb.uz/db_ferpi/2022/set_new_pvo.php',
+    },
+    removePvo: {
+      path: 'http://tsnqb.uz/db_ferpi/2022/remove_pvo.php',
+    },
+    editUserAccaunt: {
+      path: 'http://tsnqb.uz/db_ferpi/2022/edit_user_account.php',
+    },
+    get_menu: {
+      path: 'https://navbat.tsuos.uz/db/get_data.php',
+    },
+    add_queue: {
+      path: 'https://navbat.tsuos.uz/db/add_queue.php',
+    },
+    update_menu: {
+      path: 'https://navbat.tsuos.uz/db/update_menu.php',
+    },
+    officer_next_item: {
+      path: 'https://navbat.tsuos.uz/db/officer_next_item.php',
+    },
+    getStatistics: {
+      path: 'https://navbat.tsuos.uz/db/get_statistics.php',
+    },
+  },
+};
