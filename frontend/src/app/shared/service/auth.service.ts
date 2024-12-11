@@ -7,13 +7,13 @@ import { from, Observable, of, BehaviorSubject } from 'rxjs';
 import { take, switchMap, tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
-export interface userInt{
+export interface userInt {
   role: string;
   email: string;
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
   user: Observable<any>;
@@ -26,20 +26,32 @@ export class AuthService {
   // };
   // user$ = new BehaviorSubject<userInt>(this.userR);
 
-  constructor(private afAuth: AngularFireAuth, private db: AngularFirestore, private router: Router) {
+  constructor(
+    private afAuth: AngularFireAuth,
+    private db: AngularFirestore,
+    private router: Router
+  ) {
     this.autoLog();
   }
-  autoLog(){
+  autoLog() {
     this.user = this.afAuth.authState.pipe(
-      switchMap(user => {
+      switchMap((user) => {
         if (user) {
-          return this.db.doc(`users/${user.uid}`).valueChanges().pipe(
-            take(1),
-            tap(data => {
+          console.log('user 1', user);
+          return this.db
+            .doc(`users/${user.uid}`)
+            .valueChanges()
+            .pipe(
+              take(1),
+              tap((data) => {
+                console.log('user 3', data);
+                // if (!data) {
+                //   data = {};
+                // }
                 data['id'] = user.uid;
                 this.currentUser.next(data);
-            })
-          );
+              })
+            );
         } else {
           this.currentUser.next(null);
           return of(null);
@@ -48,21 +60,23 @@ export class AuthService {
     );
   }
   signUp(credentials) {
-    return this.afAuth.createUserWithEmailAndPassword(credentials.email, credentials.password).then(data => {
-      // console.log('createUserWithEmailAndPassword', data.user)
-      return this.db.doc(`users/${data.user.uid}`).set({
-        first_name: credentials.first_name,
-        last_name: credentials.last_name,
-        patronymic: credentials.patronymic,
-        password: credentials.password,
-        email: data.user.email,
-        officer_id: credentials.officer_id,
-        role: 'OFFICER',
-        services: credentials.services,
-        permissions: [],
-        created: firebase.firestore.FieldValue.serverTimestamp()
+    return this.afAuth
+      .createUserWithEmailAndPassword(credentials.email, credentials.password)
+      .then((data) => {
+        // console.log('createUserWithEmailAndPassword', data.user)
+        return this.db.doc(`users/${data.user.uid}`).set({
+          first_name: credentials.first_name,
+          last_name: credentials.last_name,
+          patronymic: credentials.patronymic,
+          password: credentials.password,
+          email: data.user.email,
+          officer_id: credentials.officer_id,
+          role: 'OFFICER',
+          services: credentials.services,
+          permissions: [],
+          created: firebase.firestore.FieldValue.serverTimestamp(),
+        });
       });
-    });
   }
   // async resetPassport(email){
   //   return this.afAuth.sendPasswordResetEmail(email).then(res => {
@@ -74,19 +88,25 @@ export class AuthService {
   recoverPass(code, password) {
     return this.afAuth.confirmPasswordReset(code, password);
   }
-  
+
   signIn(credentials): Observable<any> {
-    return from(this.afAuth.signInWithEmailAndPassword(credentials.email, credentials.password)).pipe(
-      switchMap(user => {
+    return from(
+      this.afAuth.signInWithEmailAndPassword(
+        credentials.email,
+        credentials.password
+      )
+    ).pipe(
+      switchMap((user) => {
         if (user) {
-          return this.db.doc(`users/${user.user.uid}`).valueChanges().pipe(
-            take(1)
-          );
+          return this.db
+            .doc(`users/${user.user.uid}`)
+            .valueChanges()
+            .pipe(take(1));
         } else {
           return of(null);
         }
       })
-    )
+    );
   }
 
   signOut() {
@@ -97,7 +117,10 @@ export class AuthService {
 
   hasPermissions(permissions: string[]): boolean {
     for (const perm of permissions) {
-      if (!this.currentUser.value || !this.currentUser.value.permissions.includes(perm)) {
+      if (
+        !this.currentUser.value ||
+        !this.currentUser.value.permissions.includes(perm)
+      ) {
         return false;
       }
     }
@@ -108,4 +131,3 @@ export class AuthService {
     return this.afAuth.sendPasswordResetEmail(email);
   }
 }
-

@@ -2,7 +2,15 @@
 	<div (click)="selectSymbol(idx)">{{item.symbol}} {{item.title[(lang==="en")?"en":((lang==="ru")?"ru":"uz")]}}</div>
 </div> -->
 <div class="bolim">
-  <div [ngClass]="environment.otm === 'tsuos' ? 'img-tsuos-logo' : 'img'"></div>
+  <div
+    [ngClass]="
+      environment.otm === 'tsuos'
+        ? 'img-tsuos-logo'
+        : environment.otm === 'tkti'
+        ? 'img-tkti-logo'
+        : 'img'
+    "
+  ></div>
   <div class="bolim-group">
     <div
       class="bolim-inner"

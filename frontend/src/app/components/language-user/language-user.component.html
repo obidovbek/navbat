@@ -4,7 +4,15 @@
 
 <div class="lang">
   <!-- <img class="img" alt=""> -->
-  <div [ngClass]="environment.otm === 'tsuos' ? 'img-tsuos-logo' : 'img'"></div>
+  <div
+    [ngClass]="
+      environment.otm === 'tsuos'
+        ? 'img-tsuos-logo'
+        : environment.otm === 'tkti'
+        ? 'img-tkti-logo'
+        : 'img'
+    "
+  ></div>
   <p class="lang-text">Kelajakni birgalikda quramiz!</p>
   <div (click)="selectLanguage('uz')" class="lang-inner">O'zbekcha</div>
   <div (click)="selectLanguage('ru')" class="lang-inner">Русский</div>

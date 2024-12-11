@@ -1,0 +1,246 @@
+[
+  {
+    "symbol": "A",
+    "symbol_lang": { "uz": "A", "ru": "A", "en": "A" },
+    "title": {
+      "uz": "Talabalarga xizmat koʻrsatish sektori xizmatlari",
+      "ru": "Услуги сферы обслуживания студентов",
+      "en": "Services of the student service sector"
+    },
+    "inner_menu": [
+      {
+        "uz": "Dars jadvallari haqida maʼlumot olish",
+        "ru": "Получение информацию о расписании уроков",
+        "en": "Get information about lesson schedules"
+      },
+      {
+        "uz": "Qayta oʻqish uchun fan guruhlariga ariza yuborish",
+        "ru": "Содействие в направлении заявлений в предметные группы для повторного обучения",
+        "en": "Sending an application to subject groups for re-starting"
+      },
+      {
+        "uz": "Joriy, oraliq va yakuniy nazoratlar toʻgʻrisida maʼlumot olish",
+        "ru": "Получение о текущем, промежуточном и итоговом контролях",
+        "en": "Providing information to students about current, midterms and final controls"
+      },
+      {
+        "uz": "Akademik maʼlumotnoma va transkript olish",
+        "ru": "Получение академической справки и транскриптов",
+        "en": "Obtaining an academic reference and transcript"
+      },
+      {
+        "uz": "Imtihonlar roʻyxatini olish",
+        "ru": "Получение списка экзаменов",
+        "en": "Getting a list of exams"
+      },
+      {
+        "uz": "Oʻqishni koʻchirish va qayta tiklash uchun ariza yuborish",
+        "ru": "Направление заявления о переводе и возобновлении учебы",
+        "en": "Sending an application for transferring and resuming studies"
+      },
+      {
+        "uz": "Talaba guvohnomasi hamda turar joyi guvohnomasini yaratish va taqdim etish",
+        "ru": " Оформление и выдача студенческого билета и свидетельства о месте проживании",
+        "en": "Creation and presentation of a student ID card and a residence ID card"
+      },
+      {
+        "uz": "GPA koʻrsatkichi haqida maʼlumotnoma olish",
+        "ru": "Получить справку о среднем балле (GPA)",
+        "en": "Getting a reference of grade point average (GPA)"
+      },
+      {
+        "uz": "Talabalarning “HEMIS” axborot tizimidagi parolini tiklash",
+        "ru": "Восстановление пароля студентов в информационной системе «HEMIS»",
+        "en": "Restore students' passwords in the 'HEMIS' information system"
+      },
+      {
+        "uz": "Oʻqishga qabul va oʻqishni koʻchirish yuzasidan konsultatsiya olish",
+        "ru": "Консультации по вопросам зачисления на учёбу  и переводу",
+        "en": "Consultation on admission and transfer of studies"
+      },
+      {
+        "uz": "TDSHUdagi turli xizmatlar va resurslar haqida maʼlumot olish",
+        "ru": "Получение информации о различных услугах и ресурсах, доступных в ТГУВ",
+        "en": "Getting information about various services and resources at TSUOS"
+      },
+      {
+        "uz": "Akademik qarzdorlik bo‘yicha ma’lumot olish",
+        "ru": "Получение информации об академической задолженности",
+        "en": "Obtaining information on academic debt"
+      },
+      {
+        "uz": "Talabalarning yotoqxonalarga joylashish uchun ariza berishga ko‘maklashish",
+        "ru": "Помощь студентам в оформлении документов на размещение в общежитиях",
+        "en": "Assisting students to apply for accommodation in dormitories"
+      },
+      {
+        "uz": "Talabalar turar joyiga koʻchib oʻtganlarni vaqtinchalik roʻyxatga qoʻyish uchun hujjatlarni tayyorlash",
+        "ru": "Подготовка документов для временной регистрации переехавших в студенческое общежитие",
+        "en": "Preparation of documents for temporary registration of those who have moved to student accommodation"
+      },
+      {
+        "uz": "Ijara subsidiyasi uchun ariza yozishga koʻmaklashish",
+        "ru": "Помощь в написании заявления о выдаче субсидии на аренду жилья",
+        "en": "Assistance in writing an application for rent subsidy"
+      },
+      {
+        "uz": "Ijara asosida yashayotgan talabalarga oylik ijara toʻlovining 50 foizi Davlat byudjeti mablagʻlari hisobidan toʻlab berilishi uchun hujjatlarni rasmiylashtirish va tavsiyalar olish ",
+        "ru": "Оформление документов и выдача рекомендаций студентам по выплате 50% от ежемесячной арендной платы из Государственного бюджета обучающимся, проживающим на съемной квартире.",
+        "en": "Drawing up documents and receiving recommendations for the payment of 50% of the monthly rent from the State budget to students living on rent."
+      }
+    ]
+  },
+  {
+    "symbol": "B",
+    "symbol_lang": { "uz": "B", "ru": "\u0411", "en": "B" },
+    "title": {
+      "uz": "Ilmiy va innovatsion faoliyat boʻyicha xizmat koʻrsatish sektori xizmatlari",
+      "ru": "Услуги сферы обслуживания научной и инновационной деятельности",
+      "en": "Services of the service sector for scientific and innovative activities"
+    },
+    "inner_menu": [
+      {
+        "uz": "Grantlar va tanlovlar haqida maʼlumot olish",
+        "ru": "Получение информации о грантах и ​​конкурсах",
+        "en": "Getting information about grants and competitions"
+      },
+      {
+        "uz": "Ilmiy konferensiyalar haqida maʼlumot olish",
+        "ru": "Получение информации о научных конференциях",
+        "en": "Getting information about scientific conferences"
+      },
+      {
+        "uz": "Innovatsion gʻoya va startaplarni roʻyxatdan oʻtkazishga yordam olish",
+        "ru": "Помощь в регистрации инновационных идей и стартапов",
+        "en": "Assistance in registering innovative ideas and startups"
+      },
+      {
+        "uz": "Talabalarga nomdor stipendiyalar haqida maʼlumot berish hamda ariza berishda koʻmaklashish",
+        "ru": "Предоставление студентам информации о соответствующих стипендиях и оказание содействия в подаче заявления",
+        "en": "Informing students about special scholarships and helping them apply"
+      },
+      {
+        "uz": "Ilmiy loyihalar toʻgʻrisida konsultatsiya olish",
+        "ru": "Консультирование по научным проектам",
+        "en": "Consulting on scientific projects"
+      },
+      {
+        "uz": "“Ustoz-shogird maktabi”ga aʼzo boʻlishga yordam olish",
+        "ru": "Получение помощи для вступления в «Школу Учителя-Ученика»",
+        "en": "Getting help to become a member of the 'Teacher-Student School'"
+      },
+      {
+        "uz": "Talabalarga ilmiy toʻgaraklar haqida maʼlumot berish",
+        "ru": "Информирование студентов о научных кружках",
+        "en": "Informing students about scientific circles"
+      },
+      {
+        "uz": "Grantlar uchun ariza shakllarini toʻldirishda yordam olish.",
+        "ru": "Получение помощи в заполнении форм заявлений на получение грантов.",
+        "en": "Getting help filling out application forms for grants."
+      }
+    ]
+  },
+  {
+    "symbol": "C",
+    "symbol_lang": { "uz": "C", "ru": "C", "en": "C" },
+    "title": {
+      "uz": "Xalqaro aloqalar va akademik mobillik boʻyicha xizmat koʻrsatish sektori xizmatlari",
+      "ru": "Служба сферы услуг по международным связям и академической мобильности",
+      "en": "Services of the service sector for international relations and academic mobility"
+    },
+    "inner_menu": [
+      {
+        "uz": "Oʻqish joyidan ingliz tilida maʼlumotnoma olish",
+        "ru": "Получение справки с места учебы на английском языке",
+        "en": "Getting a certificate from the place of study in English"
+      },
+      {
+        "uz": "Turli xalqaro grantlar va akademik mobillik dasturlari boʻyicha maʼlumotlarni olish",
+        "ru": "Получение информации о различных международных грантах и ​​программах академической мобильности",
+        "en": "Receiving information on various international grants and academic mobility programs"
+      },
+      {
+        "uz": "Oʻqishga qabul qilingan xorijiy talabalarni elektron tizimda roʻyxatga olish va fanlarga biriktirish",
+        "ru": "Регистрация принятых на учебу иностранных студентов и прикрепление к предметам в электронной системе",
+        "en": "Registration of admitted foreign students in the electronic system and attachment to subjects"
+      },
+      {
+        "uz": "Xorijiy oliygohlarda tahsil olishda konsultatsiya olish",
+        "ru": "Консультации по обучению в зарубежных вузах",
+        "en": "Consulting for studying in foreign universities"
+      },
+      {
+        "uz": "Xorijiy talabalar uchun viza xizmatlarini amalga oshirish",
+        "ru": "Осуществление визовых услуг для иностранных студентов",
+        "en": "Implementation of visa services for foreign students"
+      },
+      {
+        "uz": "Xorijiy talabalarga toʻlov-shartnomalarini olish",
+        "ru": "Получение договоров оплаты иностранным студентам",
+        "en": "Receiving payment contracts for foreign students"
+      },
+      {
+        "uz": "Xorijiy talabalarni oʻzbekiston Respublikasida vaqtinchalik roʻyxatga qoʻyish xizmatlarini amalga oshirish",
+        "ru": "Осуществление услуг по временной регистрации иностранных студентов в Республике Узбекистан",
+        "en": "Implementation of temporary registration services of foreign students in the Republic of Uzbekistan"
+      },
+      {
+        "uz": "Xorijiy talabalarni oʻqishga qabul qilish boʻyicha konsultatsiya berish, ariza va talab etiladigan hujjatlarni koʻrib chiqish uchun qabul qilish",
+        "ru": "Консультирование иностранных студентов по вопросам поступления, прием их для рассмотрения заявлений и необходимых документов",
+        "en": "Advising foreign students on admission, receiving them for review of applications and required documents"
+      },
+      {
+        "uz": "Oliy taʼlim muassasasidagi oʻquv jarayonlari haqida maʼlumot olish (xorijlik talabalar uchun) ",
+        "ru": "Получение информации об образовательных процессах в высшем учебном заведении (для иностранных студентов)",
+        "en": "Getting information about educational processes in the higher education institution (for foreign students)"
+      }
+    ]
+  },
+  {
+    "symbol": "D",
+    "symbol_lang": { "uz": "D", "ru": "\u0414", "en": "D" },
+    "title": {
+      "uz": "Marketing va amaliyotlarni tashkil etish hamda buxgalteriya boʻyicha xizmat koʻrsatish sektori xizmatlari",
+      "ru": "Услуги в сфере маркетинга и организации практики, а также  бухгалтерского обслуживания",
+      "en": "Marketing and practice organization and accounting service sector services"
+    },
+    "inner_menu": [
+      {
+        "uz": "Ishga joylashgan bitiruvchilar haqida maʼlumot kiritish va olish",
+        "ru": " Ввод и получение информации о трудоустроенных выпускниках",
+        "en": "Entering and receiving information about employed graduates"
+      },
+      {
+        "uz": "Toʻlov-shartnoma summasini belgilash, hisoblash va taqdim etish",
+        "ru": "Определение, расчет и представление суммы платежа по договору о платно-контрактной учёбе",
+        "en": "Determination, calculation and presentation of the amount of the payment contract"
+      },
+      {
+        "uz": "Akademik qarzdor talabalar uchun qayta oʻzlashtirish miqdorlarini belgilash va tasdiqlash",
+        "ru": "Определение и утверждение размеров сумм, выплачиваемых  за переобучение студентами, имеющими академическую задолженность",
+        "en": "Determining and approving re-appropriation amounts for academically indebted students"
+      },
+      {
+        "uz": "Talabalarga ishga joylashish borasida tavsiyalar berish",
+        "ru": "Сдача рекомендаций студентам по трудоустройству",
+        "en": "Giving recommendations to students regarding employment"
+      },
+      {
+        "uz": "Bitiruvchilarni ishga taqsimlash va joylashishiga oid ma’lumot olish ",
+        "ru": "Получение информации о распределении на работу и трудоустройстве выпускников",
+        "en": "Obtaining information on job allocation and placement of graduates"
+      },
+      {
+        "uz": "Potensial ish beruvchilar haqida ma’lumot olish ",
+        "ru": "Получение информации о потенциальных работодателях",
+        "en": "Getting information about potential employers"
+      },
+      {
+        "uz": "Amaliyotlar bazasi haqida ma’lumot olish  ",
+        "ru": "Получение информации о базе практики",
+        "en": "Getting information about the base of practices"
+      }
+    ]
+  }
+]

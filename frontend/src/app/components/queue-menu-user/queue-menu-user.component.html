@@ -53,3 +53,58 @@
     />
   </g>
 </svg>
+<app-custom-dialog
+  *ngIf="isDialogVisible"
+  [title]="
+    lang === 'en'
+      ? 'Your number'
+      : lang === 'ru'
+      ? 'Ваш номер'
+      : 'Sizning raqamingiz'
+  "
+  (close)="closeDialog()"
+>
+  <div
+    id="queue_print"
+    style="
+      display: flex;
+      font-size: 14px;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      color: black;
+    "
+  >
+    <div
+      style="color: black; font-size: 35px; font-weight: 900; padding: 8px 0"
+    >
+      {{ queue_number }}
+    </div>
+    <div style="color: black">
+      <p>
+        <strong style="color: black"> {{ service_name }} </strong>
+      </p>
+      <p *ngIf="lang === 'uz'" style="color: black">
+        Sizdan oldin
+        <strong style="color: black">
+          {{ queue_differ }}
+        </strong>
+        ta navbat bor
+      </p>
+      <p *ngIf="lang === 'ru'" style="color: black">
+        Перед вами
+        <strong style="color: black">
+          {{ queue_differ }}
+        </strong>
+        очередь
+      </p>
+      <p *ngIf="lang === 'en'" style="color: black">
+        There is
+        <strong style="color: black">
+          {{ queue_differ }}
+        </strong>
+        queue ahead of you
+      </p>
+    </div>
+  </div>
+</app-custom-dialog>

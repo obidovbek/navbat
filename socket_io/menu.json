@@ -1,0 +1,310 @@
+[
+  {
+    "symbol": "A",
+    "symbol_lang": { "uz": "A", "ru": "A", "en": "A" },
+    "title": {
+      "uz": "Akademik faoliyat xizmatlari",
+      "ru": "Услуги академической деятельности",
+      "en": "Academic activity services"
+    },
+    "inner_menu": [
+      {
+        "uz": "Akademik ta’til olish",
+        "ru": "Получение об академическом отпуске",
+        "en": "Take an academic vacation",
+        "queue": { "current": 1, "overall": 2, "date": 26 }
+      },
+      {
+        "uz": "Talabalar safidan chetlnganlik haqida ma’lumot",
+        "ru": "Информации об исключении из рядов студентов",
+        "en": "Informations about academic leave (drop out)",
+        "queue": { "current": 1, "overall": 1, "date": 26 }
+      },
+      {
+        "uz": "O‘zlashtirish natijalari (baho) to‘g‘risida ma’lumot",
+        "ru": "Информации о результатах оценки",
+        "en": "Information on mastering results (assessment)",
+        "queue": { "current": 1, "overall": 1, "date": 26 }
+      },
+      {
+        "uz": "Dars jadvali haqida ma’lumot",
+        "ru": "Информации о расписании занятий",
+        "en": "Lesson Schedule information",
+        "queue": { "current": 1, "overall": 1, "date": 26 }
+      },
+      {
+        "uz": "O‘qishni ko‘chirish va kreditni tan olish (fanlar farqi, konvertasiya)",
+        "ru": "Перевод и признание кредита (предметная разница, конверсия)",
+        "en": "Transfer and credit recognition (subject difference, conversion)",
+        "queue": { "current": 1, "overall": 1, "date": 26 }
+      },
+      {
+        "uz": "O‘qishni tiklashga ariza berish",
+        "ru": "Подать заявку на возобновление обучения",
+        "en": "Apply for resumption of study",
+        "queue": { "current": 1, "overall": 1, "date": 26 }
+      },
+      {
+        "uz": "Shaxsiy ta’lim trayektoriyasini shakllantirish",
+        "ru": "Формирование личной траектории обучения",
+        "en": "Forming a personal learning trajectory",
+        "queue": { "current": 1, "overall": 1, "date": 26 }
+      },
+      {
+        "uz": "Yillik o‘quv reja haqida ma’lumot",
+        "ru": " Информация о годовом учебном плане",
+        "en": "Information about the annual curriculum",
+        "queue": { "current": 1, "overall": 1, "date": 26 }
+      },
+      {
+        "uz": "Sillabus (o‘quv dasturi) haqida ma’lumot",
+        "ru": "Информации о силлабусах (учебных программах)",
+        "en": "Information about the syllabus",
+        "queue": { "current": 1, "overall": 1, "date": 26 }
+      },
+      {
+        "uz": "Imtihonlar jadvalini ko‘rish",
+        "ru": "Посмотреть расписание экзаменов",
+        "en": "View exam schedules",
+        "queue": { "current": 1, "overall": 2, "date": 26 }
+      },
+      {
+        "uz": "Qoldirilgan imtihonlarni topshirishga ro‘yxatdan o‘tish (sababli holatda)",
+        "ru": "Регистрация для сдачи повторных экзаменов (в случае уважительной причины)",
+        "en": "Registration for the missed exams(if was reasons)",
+        "queue": { "current": 1, "overall": 1, "date": 26 }
+      },
+      {
+        "uz": "Imtihon natijalariga appelyatsiya shikoyati kiritish",
+        "ru": "Подать апелляцию на результаты экзамен",
+        "en": "Appeal against exam results",
+        "queue": { "current": 1, "overall": 1, "date": 26 }
+      },
+      {
+        "uz": "Guruhdan guruhga o‘tishga ariza berish (asosli hollarda)",
+        "ru": "Подать заявку на переход из группы в группу (основание)",
+        "en": "To move from group to group(in justified cases)",
+        "queue": { "current": 1, "overall": 1, "date": 26 }
+      },
+      {
+        "uz": "Talabalar almashinuv dasturlari haqida ma’lumot",
+        "ru": "Информация о программах обмена студентами",
+        "en": "Information about student exchange programs",
+        "queue": { "current": 1, "overall": 1, "date": 26 }
+      },
+      {
+        "uz": "Akademik qarzdorlikda fanlar to‘lov qiymatini aniqlash",
+        "ru": "Определение стоимости предметов при академической задолженности",
+        "en": "Determining academic debt",
+        "queue": { "current": 1, "overall": 1, "date": 26 }
+      },
+      {
+        "uz": "Qo‘shma ta’lim dasturlari haqida ma’lumot",
+        "ru": "Информация о совместных образовательных программах",
+        "en": "Information about joint educational programs",
+        "queue": { "current": 1, "overall": 1, "date": 26 }
+      },
+      {
+        "uz": "Diplom (dublikat) olish",
+        "ru": "Получение диплома (дубликата)",
+        "en": "Obtaining a diploma (duplicate)",
+        "queue": { "current": 1, "overall": 1, "date": 26 }
+      },
+      {
+        "uz": "Akademik transkript olish",
+        "ru": "Получить академическую транскрипт",
+        "en": "Get an academic transcript",
+        "queue": { "current": 1, "overall": 1, "date": 26 }
+      },
+      {
+        "uz": "Kredit-modul tizimi haqida ma’lumot",
+        "ru": "Информация о кредитно-модульной системе",
+        "en": " Information about the credit module system ",
+        "queue": { "current": 1, "overall": 1, "date": 26 }
+      }
+    ]
+  },
+  {
+    "symbol": "B",
+    "symbol_lang": { "uz": "B", "ru": "Б", "en": "B" },
+    "title": {
+      "uz": "Talabalarning ijtimoiy-iqtisodiy faoliyati bo‘yicha xizmatlar",
+      "ru": "Студенческие социально-экономические услуги",
+      "en": "Student Socio-Economic Services"
+    },
+    "inner_menu": [
+      {
+        "uz": "To‘lov shartnoma olish",
+        "ru": "Получение контракта об оплате",
+        "en": "Get a payment contract",
+        "queue": { "current": 1, "overall": 1, "date": 26 }
+      },
+      {
+        "uz": "Arxiv ma’lumotlar olish",
+        "ru": "Получение архивных данных",
+        "en": "Get archive information",
+        "queue": { "current": 1, "overall": 1, "date": 26 }
+      },
+      {
+        "uz": "Harbiy majburiyat bo‘yicha ma’lumot",
+        "ru": "Информации военная служба",
+        "en": "Conscription Information",
+        "queue": { "current": 1, "overall": 1, "date": 26 }
+      },
+      {
+        "uz": "Ta’lim (o‘qish) joyidan ma’lumotnoma olish",
+        "ru": "Получение справки с места образования (учебы)",
+        "en": "Obtain a reference manual from the place of study",
+        "queue": { "current": 1, "overall": 1, "date": 26 }
+      },
+      {
+        "uz": "Karyera markazi haqida ma’lumot",
+        "ru": "Информации о центре карьеры",
+        "en": " Information on career center",
+        "queue": { "current": 1, "overall": 1, "date": 26 }
+      },
+      {
+        "uz": "O‘quv kurslari va markazlar haqida ma`lumot",
+        "ru": "Информация об учебных курсах и центрах",
+        "en": "Information about training courses and centers",
+        "queue": { "current": 1, "overall": 1, "date": 26 }
+      },
+      {
+        "uz": "Talabalar turar joyida yashashga ariza",
+        "ru": "Заявление на проживание в студенческом общежитии",
+        "en": "Application for accommodation in student housing",
+        "queue": { "current": 1, "overall": 1, "date": 26 }
+      },
+      {
+        "uz": "Shikoyat yoki takliflar kiritish",
+        "ru": "Жалобы и предложения",
+        "en": "Complaint or suggestion",
+        "queue": { "current": 1, "overall": 1, "date": 26 }
+      },
+      {
+        "uz": "Fakultetlar haqida ma’lumot",
+        "ru": "Информации о факультетах",
+        "en": "Informations on faculties",
+        "queue": { "current": 1, "overall": 1, "date": 26 }
+      },
+      {
+        "uz": "Stipendiyalar haqida ma'lumot",
+        "ru": "Информация о стипендиях",
+        "en": "Information about scholarships",
+        "queue": { "current": 1, "overall": 1, "date": 26 }
+      },
+      {
+        "uz": "Ichki tartib qoidalar haqida axborot olish",
+        "ru": "Получить информацию о внутренних правилах",
+        "en": "Information on Student Code of Conduct",
+        "queue": { "current": 1, "overall": 1, "date": 26 }
+      },
+      {
+        "uz": "Yutuqlarga erishganda moddiy rag‘bat (kompensatsiya) olish",
+        "ru": "Получать материальное поощрение (компенсацию) за успехи",
+        "en": "Receive financial incentives (compensation) for success",
+        "queue": { "current": 1, "overall": 1, "date": 26 }
+      },
+      {
+        "uz": "Moddiy yordam olishga ariza berish",
+        "ru": "Подать заявку на финансовую помощь",
+        "en": "Apply for financial assistance",
+        "queue": { "current": 1, "overall": 1, "date": 26 }
+      }
+    ]
+  },
+  {
+    "symbol": "C",
+    "symbol_lang": { "uz": "C", "ru": "C", "en": "C" },
+    "title": {
+      "uz": "Ilmiy tadqiqot, Innovatsiya va grantlar bo‘yicha ma’lumotlar",
+      "ru": "Информация об исследованиях, инновациях и грантах",
+      "en": "Research, Innovation and Grant Information"
+    },
+    "inner_menu": [
+      {
+        "uz": "Grantlar va tanlovlar haqida ma’lumot",
+        "ru": "Информация о грантах и   конкурсах",
+        "en": "Information about grants and competitions",
+        "queue": { "current": 1, "overall": 1, "date": 26 }
+      },
+      {
+        "uz": "Ilmiy konferensiyalar haqida ma’lumot",
+        "ru": " Информация о научных конференциях",
+        "en": "Information about scientific conferences",
+        "queue": { "current": 1, "overall": 1, "date": 26 }
+      },
+      {
+        "uz": "Ilmiy maqola yozish uchun konsultatsiya",
+        "ru": "Консультация по написанию научной статьи",
+        "en": "Consultation for writing a scientific article",
+        "queue": { "current": 1, "overall": 1, "date": 26 }
+      },
+      {
+        "uz": "Innovatsion g‘oya va startapni ro‘yxatdan o‘tkazish",
+        "ru": "Инновационные идеи и регистрация стартапа",
+        "en": "Innovative ideas and startup registration",
+        "queue": { "current": 1, "overall": 1, "date": 26 }
+      },
+      {
+        "uz": "Ustoz shogird maktabiga a’zo bo‘lish",
+        "ru": "Присоединяйтесь к школе учитель-ученик",
+        "en": "Join a teacher-student school",
+        "queue": { "current": 1, "overall": 1, "date": 26 }
+      },
+      {
+        "uz": "Nomdor stipendiyalar haqida ma’lumot",
+        "ru": "Информация о престижных стипендиях",
+        "en": "Information about prestigious scholarships",
+        "queue": { "current": 1, "overall": 1, "date": 26 }
+      },
+      {
+        "uz": "Ilmiy loyihalar to‘g‘risida konsultatsiya",
+        "ru": "Консультации по исследовательским проектам",
+        "en": "Consultation on research projects",
+        "queue": { "current": 1, "overall": 1, "date": 26 }
+      }
+    ]
+  },
+  {
+    "symbol": "D",
+    "symbol_lang": { "uz": "D", "ru": "Д", "en": "D" },
+    "title": {
+      "uz": " Axborot tizimlari bo‘yicha xizmatlar",
+      "ru": "Услуги информационных систем",
+      "en": "Information Systems Services"
+    },
+    "inner_menu": [
+      {
+        "uz": "HEMIS tizimi bo‘yicha konsultatsiya",
+        "ru": "Консультация по системе ХЕМИС",
+        "en": "HEMIS consultation",
+        "queue": { "current": 1, "overall": 1, "date": 26 }
+      },
+      {
+        "uz": "HEMIS tizimida shahsiy ma’lumotlarni tahrirlash",
+        "ru": "Редактирование личной информации в системе ХЕМИС",
+        "en": "Editing personal information in the HEMIS system",
+        "queue": { "current": 1, "overall": 1, "date": 26 }
+      },
+      {
+        "uz": "HEMIS tizimida login parolni o'zgartirish (tiklash)",
+        "ru": " Сброс пароля для входа в систему ХЕМИС",
+        "en": "Reset login password on HEMIS system ",
+        "queue": { "current": 1, "overall": 1, "date": 26 }
+      },
+      {
+        "uz": "O‘quv jarayoniga oid dasturiy ta‘minotlardan foydalanish bo‘yicha yordam:",
+        "ru": "Поддержка использования образовательного программного обеспечения",
+        "en": "Support for the use of educational software",
+        "queue": { "current": 1, "overall": 1, "date": 26 }
+      },
+      {
+        "uz": "ZOOM dasturiga ulanishga texnik yordam olish",
+        "ru": "Получите техническую поддержку для подключения к программе ZOOM",
+        "en": "Get technical support to connect to the ZOOM program",
+        "queue": { "current": 1, "overall": 1, "date": 26 }
+      }
+    ]
+  }
+]

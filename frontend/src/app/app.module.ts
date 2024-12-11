@@ -11,14 +11,14 @@ import { SalesModule } from './components/sales/sales.module';
 import { PagesModule } from './components/pages/pages.module';
 import { UsersModule } from './components/users/users.module';
 
-import { SettingModule } from './components/setting/setting.module';;
+import { SettingModule } from './components/setting/setting.module';
 import { ReportsModule } from './components/reports/reports.module';
 import { AuthModule } from './components/auth/auth.module';
 
-import {LocationStrategy, HashLocationStrategy} from '@angular/common';
-import { AngularFireAuthModule } from "@angular/fire/auth";
-import { AngularFirestoreModule } from "@angular/fire/firestore";
-import { AngularFireModule } from "@angular/fire";
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { SimpleModalModule } from 'ngx-simple-modal';
 
@@ -33,13 +33,25 @@ import 'firebase/database';
 import 'firebase/firestore';
 // import { MatSliderModule } from '@angular/material/slider';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
-// const config: SocketIoConfig = { url: 'http://213.230.99.94:55000', options: { transports : ['websocket'] } };
-const config: SocketIoConfig = { url: 'wss://ferpi.tsnqb.uz/socket.io', options: { transports : ['websocket'] } };
-
+// const config: SocketIoConfig = {
+//   url: 'http://213.230.99.94:55000',
+//   options: { transports: ['websocket'] },
+// };
+// const config: SocketIoConfig = {
+//   url: 'http://localhost:3001',
+//   options: { transports: ['websocket'] },
+// };
+// const config: SocketIoConfig = {
+//   url: 'wss://navbat.ferpi.uz',
+//   // url: 'wss://navbat.tsuos.uz',
+//   options: { transports: ['websocket'] },
+// };
+const config: SocketIoConfig = {
+  url: 'wss://navbat.tkti.uz',
+  options: { transports: ['websocket'] },
+};
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserAnimationsModule,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -55,17 +67,15 @@ const config: SocketIoConfig = { url: 'wss://ferpi.tsnqb.uz/socket.io', options:
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    SimpleModalModule.forRoot({container: "modal-container"}),
+    SimpleModalModule.forRoot({ container: 'modal-container' }),
     HttpClientModule,
     SocketIoModule.forRoot(config),
   ],
-  providers: [
-    {provide: LocationStrategy, useClass: HashLocationStrategy},
-  ],
-  bootstrap: [AppComponent]
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
+  bootstrap: [AppComponent],
 })
 export class AppModule {
-    constructor(){
+  constructor() {
     firebase.initializeApp(environment.firebaseConfig);
     firebase.database();
     firebase.storage();

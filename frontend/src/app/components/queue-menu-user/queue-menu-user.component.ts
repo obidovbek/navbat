@@ -16,6 +16,9 @@ interface changes {
   styleUrls: ['./queue-menu-user.component.scss'],
 })
 export class QueueMenuUserComponent implements OnInit {
+  isDialogVisible = false;
+  dialogContent = '';
+
   queue_number = '';
   queue_differ = 0;
   service_name = '';
@@ -47,11 +50,21 @@ export class QueueMenuUserComponent implements OnInit {
   selectSymbol() {
     return this.dataService.menu[this.dataService.selected.index].inner_menu;
   }
+  openDialog(): void {
+    // this.dialogContent = this.queuePrintContent();
+    this.isDialogVisible = true;
+  }
+
+  closeDialog(): void {
+    this.isDialogVisible = false;
+    this.router.navigateByUrl('infokios').then(() => window.location.reload());
+  }
   async selectedItem(idx: number) {
-    // var changes: any = await localStorage.getItem('changes');
-    // this.dataService.changes = JSON.parse(changes);
+    var changes: any = await localStorage.getItem('changes');
+    this.dataService.changes = JSON.parse(changes);
+    if (!this.dataService.changes) this.dataService.changes = [];
     const d = new Date();
-    this.dataService.changes.push({
+    this.dataService.changes?.push({
       idx1: this.dataService.selected.index,
       idx2: idx,
       queue:
@@ -62,21 +75,36 @@ export class QueueMenuUserComponent implements OnInit {
           .uz,
       date: d.getDate(),
     });
-    this.httpService.addQueue(this.dataService.changes).subscribe(
-      (res: any) => {
-        console.log(res);
-        if (res.status === 200) {
-          this.dataService.menu = res.menu;
-          this.dataService.changes = [];
-          localStorage.setItem(
-            'changes',
-            JSON.stringify(this.dataService.changes)
-          );
-          localStorage.setItem('menu', JSON.stringify(res.menu));
-          this.router.navigateByUrl('/#/infokios');
-        } else {
-          alert('Nimadur hato yana bir bor urinib ko‘ring!');
-        }
+    console.log('item selected');
+    this.httpService.addQueue(this.dataService.selected.index, idx).subscribe(
+      (menu: any) => {
+        // console.log(res);
+        // if (res.status === 200) {
+        this.dataService.menu = menu;
+        this.dataService.changes = [];
+        const selectedService =
+          this.dataService.menu[this.dataService.selected.index].inner_menu[
+            idx
+          ];
+        this.queue_number =
+          this.dataService.menu[this.dataService.selected.index].symbol +
+          (idx + 1).toString() +
+          '-' +
+          selectedService.queue.overall;
+        this.queue_differ =
+          selectedService.queue.overall - selectedService.queue.current;
+        this.service_name = selectedService[this.lang];
+
+        // this.printElem(document.getElementById('queue_print').innerHTML);
+        localStorage.setItem(
+          'changes',
+          JSON.stringify(this.dataService.changes)
+        );
+        localStorage.setItem('menu', JSON.stringify(menu));
+        this.openDialog();
+        // } else {
+        //   alert('Nimadur hato yana bir bor urinib ko‘ring!');
+        // }
       },
       (error) => {
         console.log('oflayn');
@@ -90,28 +118,34 @@ export class QueueMenuUserComponent implements OnInit {
       }
     );
     // console.log(this.symbol, (this.dataService.menu[this.dataService.selected.index].inner_menu[idx])[(this.lang==="en")?"en":((this.lang==="ru")?"ru":"uz")])
-    this.queue_number =
-      this.dataService.menu[this.dataService.selected.index].symbol +
-      (idx + 1).toString() +
-      this.dataService.menu[this.dataService.selected.index].inner_menu[idx]
-        .queue.overall;
-    this.queue_differ =
-      this.dataService.menu[this.dataService.selected.index].inner_menu[idx]
-        .queue.overall -
-      this.dataService.menu[this.dataService.selected.index].inner_menu[idx]
-        .queue.current;
-    this.service_name =
-      this.dataService.menu[this.dataService.selected.index].inner_menu[idx][
-        this.lang
-      ];
+
     // alert('Navbat: '+ this.queue_number);
-    // this.print?.print('queue_print')
-    setTimeout(() => {}, 3000);
-    this.printElem(document.getElementById('queue_print').innerHTML);
+    // this.print?.print('queue_print');
+    // setTimeout(() => {}, 3000);
   }
   navigateBack() {
     console.log('navigateBack');
     this.router.navigateByUrl('/queue-user');
+  }
+  queuePrintContent() {
+    var queue_print =
+      "<div id='queue_print' style='display:flex; font-size: 14px; justify-content: center;flex-direction: column;align-items: center;'>";
+    queue_print += '<div>Sizning raqamingiz</div>';
+    queue_print +=
+      "<div style='font-size: 35px;font-weight: 900;padding: 8px 0;'>" +
+      this.queue_number +
+      '';
+    queue_print +=
+      '</div><div><strong>' + this.service_name + '</strong></div>';
+    queue_print +=
+      '<div>Sizdan oldin <strong>' +
+      this.queue_differ +
+      '</strong> ta navbat bor</div>';
+    queue_print += '<div>Operator chaqirishini kuting</div>';
+    queue_print += "<div style='margin-top:10px; font-size:1px;'>a</div>";
+
+    queue_print += '</div>';
+    return queue_print;
   }
   printElem(elem) {
     // var mywindow = window.open('', 'PRINT', 'height=400,width=600');
@@ -289,9 +323,9 @@ export class QueueMenuUserComponent implements OnInit {
 
     window.print();
     window.close();
-    this.router.navigate(['/infokios']).then(() => {
-      // After navigation is successful, reload the page
-      window.location.reload();
-    });
+    // this.router.navigate(['/infokios']).then(() => {
+    //   // After navigation is successful, reload the page
+    //   window.location.reload();
+    // });
   }
 }

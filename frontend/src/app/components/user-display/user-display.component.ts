@@ -29,7 +29,8 @@ export class UserDisplayComponent {
     this.environmet = environment;
     var user = { token: 'user-display' };
     this.socket.websocket_connection(user);
-    this.nextUserDisplay();
+    this.socket.connect_user_display();
+    this.nextServiceDisplay();
     this.current_queues_loop_func(0);
   }
   current_queues_loop_func(i) {
@@ -62,27 +63,27 @@ export class UserDisplayComponent {
       }
     );
   }
-  nextUserDisplay() {
+  nextServiceDisplay() {
     this.getStatistics();
-    this.socket.nextUserDisplay.subscribe((res: any) => {
-      if (res) {
-        console.log(res.data);
-        this.current_queues_new = res.data;
+    this.socket.next_service_display().subscribe((next_queue: any) => {
+      console.log('next_queue', next_queue);
+      if (next_queue) {
+        this.current_queues_new = next_queue;
         this.audio.nativeElement.play();
         setTimeout(() => {
           this.current_queues_new = null;
           var found = false;
           this.current_queues.forEach((h, h_idx) => {
-            if (h.officer_id && h.officer_id === res.data.officer_id) {
+            if (h.officer_id && h.officer_id === next_queue.officer_id) {
               found = true;
-              this.current_queues[h_idx] = res.data;
+              this.current_queues[h_idx] = next_queue;
             }
             if (h_idx + 1 === this.current_queues.length && !found) {
-              this.current_queues.push(res.data);
+              this.current_queues.push(next_queue);
             }
           });
           if (!this.current_queues.length) {
-            this.current_queues.push(res.data);
+            this.current_queues.push(next_queue);
           }
         }, 5000);
         // if(this.current_queues.find(h=>(!h.officer_id)||(h.officer_id!==res.data.officer_id))){

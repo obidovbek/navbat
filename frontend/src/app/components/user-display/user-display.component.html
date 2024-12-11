@@ -1,7 +1,7 @@
 <div class="container_2">
   <!-- Farpi  -->
   <div class="header">
-    {{environmet.otm_name}} talabalarga xizmat ko‘rsatish ofisiga XUSH
+    {{ environmet.otm_name }} talabalarga xizmat ko‘rsatish ofisiga XUSH
     KELIBSIZ!
   </div>
   <div class="main">
@@ -33,13 +33,13 @@
     <!-- </video> -->
   </div>
   <div class="advert" *ngIf="service_used_number">
-    Xizmatdan {{ service_used_number }} marta foydalanildi.
+    <!-- Xizmatdan {{ service_used_number }} marta foydalanildi.
     <a
       style="color: black; text-decoration: underline"
       href="https://navbat.ferpi.uz/statistics"
       target="_blank"
       >Statistika</a
-    >
+    > -->
   </div>
 
   <!-- Ismlar -->
@@ -47,37 +47,49 @@
   <div class="section a1">
     <span *ngIf="current_queues_loop[0]"
       >{{ current_queues_loop[0].symbol
-      }}{{ current_queues_loop[0].next_number - 1 }}</span
+      }}{{ current_queues_loop[0].subMenuIndex + 1 }}-{{
+        current_queues_loop[0].next_number
+      }}</span
     >
   </div>
   <div class="section a2">
     <span *ngIf="current_queues_loop[1]"
       >{{ current_queues_loop[1].symbol
-      }}{{ current_queues_loop[1].next_number - 1 }}</span
+      }}{{ current_queues_loop[1].subMenuIndex + 1 }}-{{
+        current_queues_loop[1].next_number
+      }}</span
     >
   </div>
   <div class="section a3">
     <span *ngIf="current_queues_loop[2]"
       >{{ current_queues_loop[2].symbol
-      }}{{ current_queues_loop[2].next_number - 1 }}</span
+      }}{{ current_queues_loop[2].subMenuIndex + 1 }}-{{
+        current_queues_loop[2].next_number
+      }}</span
     >
   </div>
   <div class="section a4">
     <span *ngIf="current_queues_loop[3]"
       >{{ current_queues_loop[3].symbol
-      }}{{ current_queues_loop[3].next_number - 1 }}</span
+      }}{{ current_queues_loop[3].subMenuIndex + 1 }}-{{
+        current_queues_loop[3].next_number
+      }}</span
     >
   </div>
   <div class="section a5">
     <span *ngIf="current_queues_loop[4]"
       >{{ current_queues_loop[4].symbol
-      }}{{ current_queues_loop[4].next_number - 1 }}</span
+      }}{{ current_queues_loop[4].subMenuIndex + 1 }}-{{
+        current_queues_loop[4].next_number
+      }}</span
     >
   </div>
   <div class="section a6">
     <span *ngIf="current_queues_new"
       >{{ current_queues_new.symbol
-      }}{{ current_queues_new.next_number - 1 }}</span
+      }}{{ current_queues_new.subMenuIndex + 1 }}-{{
+        current_queues_new.next_number
+      }}</span
     >
   </div>
 

@@ -162,7 +162,7 @@ export class StatisticsComponent {
           this.dataService.menu = res.menu;
           this.genTable('load');
         } else {
-          alert('Bazaka ulana olmadim yana bir bor urinib ko‘ring!');
+          alert('Bazaka ulana olmadim yana bir bor urinib ko‘ring! a5');
           window.location.reload();
         }
       },
@@ -172,7 +172,7 @@ export class StatisticsComponent {
             this.getMenu(i + 1);
           }, 1000);
         } else {
-          alert('Bazaka ulana olmadim yana bir bor urinib ko‘ring!');
+          alert('Bazaka ulana olmadim yana bir bor urinib ko‘ring! a6');
         }
       }
     );

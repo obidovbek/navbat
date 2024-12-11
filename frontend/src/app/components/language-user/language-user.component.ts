@@ -33,13 +33,13 @@ export class LanguageUserComponent implements OnInit {
     this.httpService.getMenu().subscribe(
       (res: any) => {
         console.log(res);
-        if (res.status === 200) {
-          this.dataService.menu = res.menu;
-          localStorage.setItem('menu', JSON.stringify(res.menu));
-        } else {
-          alert('Bazaka ulana olmadim yana bir bor urinib ko‘ring!');
-          window.location.reload();
-        }
+        // if (res.status === 200) {
+        this.dataService.menu = res;
+        localStorage.setItem('menu', JSON.stringify(res));
+        // } else {
+        //   alert('Bazaga ulana olmadim yana bir bor urinib ko‘ring!');
+        //   window.location.reload();
+        // }
       },
       async (error) => {
         if (i < 2) {

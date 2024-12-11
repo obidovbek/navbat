@@ -1,24 +1,21 @@
-import { NgModule } from "@angular/core";
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { QueueMenuUserRoutingModule } from './queue-menu-user-routing.module';
 import { QueueMenuUserComponent } from './queue-menu-user.component';
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPrintElementModule } from 'ngx-print-element';
+import { CustomDialogComponent } from '../dialog/dialog.component';
 @NgModule({
-  declarations: [
-    QueueMenuUserComponent,
-  ],
+  declarations: [QueueMenuUserComponent, CustomDialogComponent],
   imports: [
     QueueMenuUserRoutingModule,
     ReactiveFormsModule,
     FormsModule,
     CommonModule,
-    NgxPrintElementModule
+    NgxPrintElementModule,
   ],
   providers: [],
-  bootstrap: [
-  ],
-  entryComponents: [
-  ]
+  bootstrap: [],
+  entryComponents: [],
 })
-export class QueueMenuUserModule { }
+export class QueueMenuUserModule {}

@@ -6,6 +6,7 @@ import { LanguageUserComponent } from './language-user.component';
 @NgModule({
   declarations: [
     LanguageUserComponent,
+    
   ],
   imports: [
     LanguageUserRoutingModule,
