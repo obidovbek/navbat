@@ -12,9 +12,10 @@ const authGuard = async (req, res, next) => {
     const result = await jwt.verify(token, process.env.JWT_SECRET);
     const { email } = result;
     const user = await getUserByEmail(email);
-    res.user = user;
+    req.user = user;
     next();
   } catch (error) {
+    console.log(error);
     return res.status(401).send("Kalit hato!");
   }
 };

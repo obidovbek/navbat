@@ -1,17 +1,18 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { AuthService } from '../../../shared/service/auth.service';
+import { HttpService } from 'src/app/shared/service/http.service';
+import { DataService } from 'src/app/shared/service/data.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  
-  @ViewChild('tabSet', {static: false}) tabSet;
+  @ViewChild('tabSet', { static: false }) tabSet;
   public loginForm: FormGroup;
   public registerForm: FormGroup;
   public resetPwForm: FormGroup;
@@ -23,6 +24,8 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     private router: Router,
     private auth: AuthService,
+    private httpService: HttpService,
+    private dataService: DataService,
     private formBuilder: FormBuilder
   ) {
     this.createLoginForm();
@@ -31,54 +34,73 @@ export class LoginComponent implements OnInit {
   }
 
   async login() {
-    this.loading = true;
-
-    this.auth.signIn(this.loginForm.value).subscribe(
-      user => {
-        this.loading = false;
-        this.router.navigateByUrl('/home');
-      },
-      async err => {
-        this.loading = false;
-        alert(err.message);
+    console.log('login', this.loginForm.value);
+    try {
+      // this.loading = true;
+      const user: any = await this.httpService.login(this.loginForm.value);
+      console.log('login', user);
+      this.dataService.user = user;
+      localStorage.setItem('jwtToken', user.token);
+      if (user) {
+        if (user.role === 'OFFICER') {
+          return this.router.navigateByUrl('/queue-officer');
+        } else if (user.role === 'ADMIN') {
+          return this.router.navigateByUrl('/queue');
+        }
       }
-    );
+    } catch (error) {
+      alert('Kirishda hatolik boldi');
+      console.log(error);
+    }
+    // this.auth.signIn(this.loginForm.value).subscribe(
+    //   user => {
+    //     this.loading = false;
+    //     this.router.navigateByUrl('/home');
+    //   },
+    //   async err => {
+    //     this.loading = false;
+    //     alert(err.message);
+    //   }
+    // );
   }
-  changeTab(e){
-    if (e.nextId !== "recoverTab") {
+  changeTab(e) {
+    if (e.nextId !== 'recoverTab') {
       this.lostPassword = false;
     }
   }
   async register() {
     this.loading = true;
 
-    this.auth.signUp(this.registerForm.value).then(async res => {
-        alert("Foydalanuvchi muvaffaqiyatli qo'shildi!")
+    this.auth.signUp(this.registerForm.value).then(
+      async (res) => {
+        alert("Foydalanuvchi muvaffaqiyatli qo'shildi!");
         this.router.navigateByUrl('/home');
         this.loading = false;
-    }, async err => {
+      },
+      async (err) => {
         alert(err.message);
         this.loading = false;
-    });
+      }
+    );
   }
- lostLink(){
-   this.lostPassword = true;
-   setTimeout(()=>{
-     this.tabSet.select('recoverTab');
-   },100);
- }
-  resetPassword(){
+  lostLink() {
+    this.lostPassword = true;
+    setTimeout(() => {
+      this.tabSet.select('recoverTab');
+    }, 100);
+  }
+  resetPassword() {
     this.resetPw(this.resetPwForm.value.email);
   }
   async resetPw(email) {
     this.loading = true;
     this.auth.resetPw(email).then(
-      async res => {
+      async (res) => {
         this.lostPassword = false;
-        alert("Emailni tekshiring!");
+        alert('Emailni tekshiring!');
         this.loading = false;
       },
-      async err => {
+      async (err) => {
         alert(err.message);
         this.loading = false;
       }
@@ -87,7 +109,7 @@ export class LoginComponent implements OnInit {
   createLoginForm() {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]]
+      password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
   createRegisterForm() {
@@ -96,39 +118,35 @@ export class LoginComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(6)]],
       first_name: ['', Validators.required],
       last_name: ['', Validators.required],
-      acceptTerms: [false, Validators.requiredTrue]
+      acceptTerms: [false, Validators.requiredTrue],
     });
   }
-  recoverPass(){
+  recoverPass() {
     this.resetPwForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]]
+      email: ['', [Validators.required, Validators.email]],
     });
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
   owlcarousel = [
     {
-      title: "Welcome to Multikart",
+      title: 'Welcome to Multikart',
       desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.",
     },
     {
-      title: "Welcome to Multikart",
+      title: 'Welcome to Multikart',
       desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.",
     },
     {
-      title: "Welcome to Multikart",
+      title: 'Welcome to Multikart',
       desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.",
-    }
-  ]
+    },
+  ];
   owlcarouselOptions = {
     loop: true,
     items: 1,
-    dots: true
+    dots: true,
   };
 
-  onSubmit() {
-    
-  }
-
+  onSubmit() {}
 }

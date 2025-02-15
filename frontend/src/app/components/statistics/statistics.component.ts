@@ -90,7 +90,7 @@ export class StatisticsComponent {
     //  this.authService.user.subscribe(user=>{
     //  	console.log('user', user)
     //  	this.type_services = user.services;
-    //  	this.user_symbol = user.officer_id;
+    //  	this.user_symbol = user.reception_number;
     //   this.getMenu(0);
     //  })
   }

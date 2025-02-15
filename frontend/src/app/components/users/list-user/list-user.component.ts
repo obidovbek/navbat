@@ -1,188 +1,156 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/shared/service/data.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpService } from 'src/app/shared/service/http.service';
 
-interface tmp{
-  loading: boolean;
-}
 @Component({
   selector: 'app-list-user',
   templateUrl: './list-user.component.html',
-  styleUrls: ['./list-user.component.scss']
+  styleUrls: ['./list-user.component.scss'],
 })
 export class ListUserComponent implements OnInit {
-  public user_list = []
-  tmp: tmp = {loading: true};
-  constructor(
-    private dataService: DataService,
-    private httpService: HttpService
-  ) {
-    // dataService.pvoKaf$.subscribe(async(res)=>{
-    //   this.user_list = await res;
-    //   this.tmp.loading = false;
-    // })
-  }
-
+  public user_list = [];
+  public servicesData = [];
+  public selectedServices: string[] = [];
+  public editUserForm: FormGroup;
+  public isEditModalVisible = false;
+  private editingUserId: number;
+  public loading = false;
+  public isDeleteModalVisible = false; // For delete confirmation modal
+  private deletingUserId: number; // ID of the user to be deleted
   public settings = {
-    delete: {
-      confirmDelete: true,
-      deleteButtonContent: '<a class="table_del_default_icon"></a>'
-    },
-    edit: {
-      editButtonContent: 'EDIT ',
-      saveButtonContent: 'SAVE ',
-      cancelButtonContent: 'CANCEL ',
-      confirmSave: true,
-    },
     actions: {
       add: false,
-      edit: true,
-      delete: true,
-      position: 'right'
+      edit: false,
+      delete: false,
+      custom: [
+        {
+          name: 'edit_user',
+          title: '<a class="edit_icon"></a>',
+        },
+        {
+          name: 'delete_user',
+          title: '<a class="delete_icon"></a>',
+        },
+      ],
+      position: 'right',
     },
     columns: {
-      // avatar: {
-      //   title: 'Avatar',
-      //   type: 'html'
-      // },
-      fname: {
-        title: 'Ismi',
-        editable: false
-      },
-      lname: {
-        title: 'Familiyasi',
-        editable: false
-      },
-      patronymic: {
-        title: 'Sharifi',
-        editable: false
-      },
-      born: {
-        title: 'Tug‘ilgan yili'
-      },
-      rank: {
-        title: 'Lavozimi',
-        editor: {
-          type: 'list',
-          config: {
-            selectText: 'Select',
-            list: [
-              {value: 'Professor', title:'Professor'},
-              {value: 'Dotsent', title:'Dotsent'},
-              {value: 'Katta o‘qituvchi', title:'Katta o‘qituvchi'},
-              {value: 'Assistent', title:'Assistent'},
-              {value: 'Kafedra mudiri', title:'Kafedra mudiri'},
-            ],
-          },
-        }
-      },
-      wagerate: {
-        title: 'Stavkasi',
-        editor: {
-          type: 'list',
-          config: {
-            selectText: 'Select',
-            list: [
-              {value: '1', title:'1'},
-              {value: '1,5', title:'1,5'},
-              {value: '0,5', title:'0,5'},
-              {value: '0,25', title:'0,25'},
-            ],
-          },
-        }
-      },
-      academic_degree: {
-        title: 'Ilmiy darajasi',
-        editor: {
-          type: 'list',
-          config: {
-            selectText: 'Select',
-            list: [
-              {value: 'Fan doktori', title:'Fan doktori'},
-              {value: 'Fan nomzodi', title:'Fan nomzodi'},
-            ],
-          },
-        }
-      },
-      academic_title: {
-        title: 'Ilmiy unvoni',
-        editor: {
-          type: 'list',
-          config: {
-            selectText: 'Select',
-            list: [
-              {value: 'Dotsent', title:'Dotsent'},
-              {value: 'Professor', title:'Professor'},
-            ],
-          },
-        }
-      },
-      state_type: {
-        title: 'Shtat turi',
-        editor: {
-          type: 'list',
-          config: {
-            selectText: 'Select',
-            list: [
-              {value: 'Asosiy', title:'Asosiy'},
-              {value: 'Ichki o‘rindosh', title:'Ichki o‘rindosh'},
-              {value: 'Tashqi o‘rindosh', title:'Tashqi o‘rindosh'},
-              {value: 'Soatbay', title:'Soatbay'},
-            ],
-          },
-        }
-      },
-      fakul: {
-        title: 'Fakultet',
-        editable: false
-      },
-      kafed: {
-        title: 'Kafedra',
-        editable: false
+      first_name: { title: 'Ismi', editable: false },
+      second_name: { title: 'Familiyasi', editable: false },
+      patronymic: { title: 'Sharifi', editable: false },
+      email: { title: 'Email', editable: false },
+      services: {
+        title: 'Xizmatlar',
+        editable: false,
+        valuePrepareFunction: (services: any[]) =>
+          services.map((service) => service.title).join(', '),
       },
     },
   };
 
-  ngOnInit() {
+  constructor(private fb: FormBuilder, private httpService: HttpService) {}
+
+  ngOnInit(): void {
+    this.loadUsers();
+    this.loadServices();
+    this.initEditForm();
   }
-  onEditConfirm(event){
-    var data = event.newData;
-    // console.log(data)
-    var newData = {
-      academic_degree: data['academic_degree'],
-      academic_title: data['academic_title'],
-      born: data['born'],
-      rank: data['rank'],
-      state_type: data['state_type'],
-      wagerate: data['wagerate'],
-    };
-    this.httpService.editUserAccaunt(data['added_id'], newData)
-    .subscribe((res:any)=>{
-      if(res.status === 200){
-        alert('Ma\'lumotlar muvaffaqiyatli yangilandi!');
-      }else{
-        alert('Nimadur hato ketti yana bir bor urinib ko\'ring!');  
-      }
-        // console.log('result ', res)
-      event.confirm.resolve();
-    },error=>{
-      alert('Nimadur hato ketti yana bir bor urinib ko\'ring! Error: ' + JSON.stringify(error));
-    })
-    // console.log(newData)
+
+  onCustomAction(event: any) {
+    if (event.action === 'edit_user') {
+      this.openEditModal(event);
+    } else if (event.action === 'delete_user') {
+      this.openDeleteModal(event);
+    }
   }
-  onDeleteConfirm(event){
-    this.httpService.removePvo(event.data.added_id)
-    .subscribe((result:any)=>{
-      if (result.status === 200) {
-        alert('Foydalanuvchi muvaffaqiyatli ochirildi!');
-        event.confirm.resolve();
-      }else{
-        alert('Nimadur hato ketti yana bir bor urinib ko\'ring!');
+  openDeleteModal(event: any) {
+    this.deletingUserId = event.data.id;
+    this.isDeleteModalVisible = true;
+  }
+  confirmDelete() {
+    this.httpService.deleteUser(this.deletingUserId).subscribe(
+      () => {
+        alert("Foydalanuvchi muvaffaqiyatli o'chirildi!");
+        this.isDeleteModalVisible = false;
+        this.loadUsers(); // Refresh user list
+      },
+      (error) => {
+        console.error('Error deleting user:', error);
       }
-    }, error =>{
-      alert('Nimadur hato ketti yana bir bor urinib ko\'ring!');
-      console.error(error);
+    );
+  }
+  cancelDelete() {
+    this.isDeleteModalVisible = false;
+  }
+  loadUsers() {
+    this.httpService.getUsers().subscribe((data: any) => {
+      this.user_list = data;
     });
   }
-}
+  getServices(menu) {
+    var items = [];
+    menu.forEach((menu_item, idx) => {
+      menu_item.inner_menu.forEach((inner) => {
+        items.push({ title: inner.uz });
+      });
+    });
+    return items;
+  }
+  loadServices() {
+    this.httpService.getMenu().subscribe((data: any) => {
+      this.servicesData = this.getServices(data);
+    });
+  }
 
+  initEditForm() {
+    this.editUserForm = this.fb.group({
+      first_name: ['', Validators.required],
+      second_name: ['', Validators.required],
+      patronymic: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', []],
+      reception_number: ['', Validators.required],
+    });
+  }
+
+  openEditModal(event: any) {
+    const user = event.data;
+    this.editingUserId = user.id;
+    this.selectedServices = user.services.map((s: any) => s.title);
+    this.editUserForm.patchValue({
+      first_name: user.first_name,
+      second_name: user.second_name,
+      patronymic: user.patronymic,
+      email: user.email,
+    });
+    this.isEditModalVisible = true;
+  }
+
+  toggleService(serviceTitle: string) {
+    if (this.selectedServices.includes(serviceTitle)) {
+      this.selectedServices = this.selectedServices.filter(
+        (s) => s !== serviceTitle
+      );
+    } else {
+      this.selectedServices.push(serviceTitle);
+    }
+  }
+
+  saveUser() {
+    const updatedUser = {
+      ...this.editUserForm.value,
+      services: this.selectedServices.map((title) => ({ title })),
+    };
+    this.httpService
+      .updateUser(this.editingUserId, updatedUser)
+      .subscribe(() => {
+        alert('Foydalanuvchi muvaffaqiyatli yangilandi!');
+        this.isEditModalVisible = false;
+        this.loadUsers();
+      });
+  }
+
+  closeModal() {
+    this.isEditModalVisible = false;
+  }
+}

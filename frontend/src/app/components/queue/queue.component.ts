@@ -43,6 +43,7 @@ export class QueueComponent {
     private httpService: HttpService,
     public dataService: DataService
   ) {
+    console.log('QueueComponent');
     this.getMenu(0);
   }
 

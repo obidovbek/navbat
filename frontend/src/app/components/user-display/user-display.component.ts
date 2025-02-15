@@ -74,7 +74,10 @@ export class UserDisplayComponent {
           this.current_queues_new = null;
           var found = false;
           this.current_queues.forEach((h, h_idx) => {
-            if (h.officer_id && h.officer_id === next_queue.officer_id) {
+            if (
+              h.reception_number &&
+              h.reception_number === next_queue.reception_number
+            ) {
               found = true;
               this.current_queues[h_idx] = next_queue;
             }
@@ -86,7 +89,7 @@ export class UserDisplayComponent {
             this.current_queues.push(next_queue);
           }
         }, 5000);
-        // if(this.current_queues.find(h=>(!h.officer_id)||(h.officer_id!==res.data.officer_id))){
+        // if(this.current_queues.find(h=>(!h.reception_number)||(h.reception_number!==res.data.reception_number))){
         // console.log('nextUserDisplay: ',res)
         // 	this.current_queues.push(res.data);
         // }

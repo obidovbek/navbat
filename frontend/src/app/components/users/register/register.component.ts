@@ -42,6 +42,7 @@ export class RegisterComponent implements OnInit {
         items.push({ title: inner.uz });
       });
     });
+    console.log(items);
     return items;
   }
 
@@ -84,6 +85,7 @@ export class RegisterComponent implements OnInit {
   }
 
   async register() {
+    console.log('register', this.registerForm.value);
     this.loading = true;
     var services = [];
     this.registerForm.value.services.forEach((sub, idx) => {
@@ -92,17 +94,23 @@ export class RegisterComponent implements OnInit {
       }
     });
     this.registerForm.value.services = services;
-    this.auth.signUp(this.registerForm.value).then(
-      async (res) => {
-        this.loading = false;
-        this.registerForm.reset();
-        alert("Foydalanuvchi muvaffaqiyatli qo'shildi!");
-      },
-      async (err) => {
-        this.loading = false;
-        alert(err.message);
-      }
-    );
+    try {
+      await this.httpService.register(this.registerForm.value);
+      this.registerForm.reset();
+      alert("Foydalanuvchi muvaffaqiyatli qo'shildi!");
+    } catch (error) {
+      alert(error.error);
+    }
+    this.loading = false;
+    // this.auth.signUp(this.registerForm.value).then(
+    //   async (res) => {
+
+    //   },
+    //   async (err) => {
+    //     this.loading = false;
+    //     alert(err.message);
+    //   }
+    // );
   }
 
   createRegisterForm() {
@@ -110,8 +118,8 @@ export class RegisterComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       first_name: ['', Validators.required],
-      last_name: ['', Validators.required],
-      officer_id: ['', Validators.required],
+      second_name: ['', Validators.required],
+      reception_number: ['', Validators.required],
       patronymic: [''],
       services: new FormArray([], minSelectedCheckboxes(1)),
     });

@@ -27,6 +27,7 @@ export const initSocket = (server) => {
     // });
     socket.on("connect_user_display", () => connect_user_display(socket));
     socket.on("queue_officer", (user) => {
+      console.log("queue_officer");
       queue_officer_connect(user, socket);
       findNextOfficer();
     });

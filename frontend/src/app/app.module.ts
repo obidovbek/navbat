@@ -25,14 +25,16 @@ import { SimpleModalModule } from 'ngx-simple-modal';
 import { HttpClientModule } from '@angular/common/http';
 
 import { environment } from './../environments/environment.prod';
-import firebase from 'firebase/app';
-import 'firebase/storage';
-import 'firebase/analytics';
-import 'firebase/auth';
-import 'firebase/database';
-import 'firebase/firestore';
+// import firebase from 'firebase/app';
+// import 'firebase/storage';
+// import 'firebase/analytics';
+// import 'firebase/auth';
+// import 'firebase/database';
+// import 'firebase/firestore';
 // import { MatSliderModule } from '@angular/material/slider';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import { AuthGuard } from './guards/auth.guard';
+import { AutoLoginGuard } from './guards/auto-login.guard';
 // const config: SocketIoConfig = {
 //   url: 'http://213.230.99.94:55000',
 //   options: { transports: ['websocket'] },
@@ -46,8 +48,12 @@ import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 //   // url: 'wss://navbat.tsuos.uz',
 //   options: { transports: ['websocket'] },
 // };
+// const config: SocketIoConfig = {
+//   url: 'wss://navbat.tkti.uz',
+//   options: { transports: ['websocket'] },
+// };
 const config: SocketIoConfig = {
-  url: 'wss://navbat.tkti.uz',
+  url: 'wss://navbat.tsuos.uz',
   options: { transports: ['websocket'] },
 };
 @NgModule({
@@ -71,13 +77,17 @@ const config: SocketIoConfig = {
     HttpClientModule,
     SocketIoModule.forRoot(config),
   ],
-  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
+  providers: [
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
+    AuthGuard,
+    AutoLoginGuard,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {
   constructor() {
-    firebase.initializeApp(environment.firebaseConfig);
-    firebase.database();
-    firebase.storage();
+    // firebase.initializeApp(environment.firebaseConfig);
+    // firebase.database();
+    // firebase.storage();
   }
 }

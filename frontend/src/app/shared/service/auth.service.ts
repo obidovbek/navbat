@@ -70,7 +70,7 @@ export class AuthService {
           patronymic: credentials.patronymic,
           password: credentials.password,
           email: data.user.email,
-          officer_id: credentials.officer_id,
+          reception_number: credentials.reception_number,
           role: 'OFFICER',
           services: credentials.services,
           permissions: [],
@@ -110,9 +110,12 @@ export class AuthService {
   }
 
   signOut() {
-    return this.afAuth.signOut().then(() => {
-      this.router.navigateByUrl('/auth/login');
-    });
+    localStorage.removeItem('jwtToken');
+    this.router.navigateByUrl('/auth/login');
+
+    // return this.afAuth.signOut().then(() => {
+    //   this.router.navigateByUrl('/auth/login');
+    // });
   }
 
   hasPermissions(permissions: string[]): boolean {

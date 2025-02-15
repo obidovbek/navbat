@@ -30,6 +30,8 @@ export const createTables = async () => {
               email VARCHAR(150) NOT NULL UNIQUE,
               password VARCHAR(255) NOT NULL,
               role_id INTEGER,
+              reception_number VARCHAR(255),
+              services JSON,
               created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
               updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
               FOREIGN KEY ( role_id ) REFERENCES roles ( id )
@@ -59,11 +61,11 @@ export const createTables = async () => {
 };
 export const insertSeeders = async () => {
   const user = {
-    first_name: "tkti",
-    second_name: "tkti",
+    first_name: "tsuos",
+    second_name: "tsuos",
     patronymic: "",
-    email: "navbat_admin@tkti.uz",
-    password: "tkti2024",
+    email: "navbat_admin@tsuos.uz",
+    password: "tsuos2025",
   };
 
   const existingUser = await getUserByEmail(user.email);
@@ -80,6 +82,7 @@ export const insertSeeders = async () => {
   if (!roleOfficer) {
     await createRole({ value: "OFFICER" });
   }
+  console.log();
   const userRole = await getRoleById(existingUser?.role_id);
   if (userRole?.value !== "ADMIN") {
     await setUserRole(createdUser?.id, "ADMIN");

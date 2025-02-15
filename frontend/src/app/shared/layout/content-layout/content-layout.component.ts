@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, NavigationEnd } from '@angular/router'
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { AuthService } from '../../service/auth.service';
 import { NavService } from '../../service/nav.service';
 import { DataService } from '../../service/data.service';
@@ -12,19 +12,23 @@ import { bounce, zoomOut, zoomIn, fadeIn, bounceIn } from 'ng-animate';
   templateUrl: './content-layout.component.html',
   styleUrls: ['./content-layout.component.scss'],
   animations: [
-    trigger('animateRoute', [transition('* => *', useAnimation(fadeIn, {
-      // Set the duration to 5seconds and delay to 2 seconds
-      //params: { timing: 3}
-    }))])
-  ]
+    trigger('animateRoute', [
+      transition(
+        '* => *',
+        useAnimation(fadeIn, {
+          // Set the duration to 5seconds and delay to 2 seconds
+          //params: { timing: 3}
+        })
+      ),
+    ]),
+  ],
 })
 export class ContentLayoutComponent implements OnInit {
-
   public right_side_bar: boolean;
   public layoutType: string = 'RTL';
   public layoutClass: boolean = false;
-  loading: boolean = true;
-  user:any;
+  loading: boolean = false;
+  user: any;
   constructor(
     public authServices: AuthService,
     public navServices: NavService,
@@ -32,16 +36,14 @@ export class ContentLayoutComponent implements OnInit {
     private httpService: HttpService,
     private route: ActivatedRoute,
     private router: Router
-    ) { 
-
-  }
+  ) {}
 
   public getRouterOutletState(outlet) {
     return outlet.isActivated ? outlet.activatedRoute : '';
   }
 
   public rightSidebar($event) {
-    this.right_side_bar = $event
+    this.right_side_bar = $event;
   }
 
   public clickRtl(val) {
@@ -57,11 +59,14 @@ export class ContentLayoutComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.authServices.user.subscribe(user=>{
-      console.log(user)
-      this.user = user;
-      this.loading = false;
-    })
-  }
+    this.loading = false;
+    this.user = this.dataService.user;
 
+    console.log('ContentLayoutComponent ngOnInit');
+    // this.authServices.user.subscribe(user=>{
+    //   console.log(user)
+    //   this.user = user;
+    //   this.loading = false;
+    // })
+  }
 }

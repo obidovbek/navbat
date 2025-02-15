@@ -1,0 +1,33 @@
+
+server {
+    listen 80;
+    server_name navbat.tsuos.uz;
+    return 301 https://navbat.tsuos.uz$request_uri;
+}
+
+server {
+    listen              443 ssl;
+    server_name         navbat.tsuos.uz;
+    ssl_certificate /etc/letsencrypt/live/navbat.tsuos.uz/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/navbat.tsuos.uz/privkey.pem; # managed by Certbot
+
+    access_log /var/log/nginx/ttferpi-access.log;
+    error_log /var/log/nginx/ttferpi-error.log;
+    client_max_body_size 1000M;
+
+    location / {
+        proxy_redirect off;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $http_host;
+        proxy_read_timeout 300;
+        proxy_connect_timeout 300;
+        proxy_send_timeout 300;
+        proxy_pass http://192.168.20.115;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection $connection_upgrade;
+    }
+
+}
+

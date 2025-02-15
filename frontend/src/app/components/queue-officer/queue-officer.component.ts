@@ -39,7 +39,7 @@ export class QueueOfficerComponent {
       this.genTable('load');
       this.officerSocketStatus = false;
       this.audio.nativeElement.play();
-      const { menuIndex, next_number, officer_id, subMenuIndex, symbol } =
+      const { menuIndex, next_number, reception_number, subMenuIndex, symbol } =
         next_service.message;
       this.current_queue =
         next_service.menu[menuIndex].inner_menu[subMenuIndex].uz +
@@ -49,24 +49,23 @@ export class QueueOfficerComponent {
         '-' +
         next_number;
     });
-    this.authService.user.subscribe((user) => {
-      console.log('user', user);
-      this.type_services = user.services;
-      this.user_symbol = user.officer_id;
-      this.getMenu(0);
-    });
+    // this.authService.user.subscribe((user) => {
+    console.log('this.dataService.user', this.dataService.user);
+    // const user = this.dataService.user
+    this.type_services = this.dataService.user.services;
+    this.user_symbol = this.dataService.user.reception_number;
+    this.getMenu(0);
+    // });
     this.socket.disconnect_officer(() => {
       this.officerSocketStatus = false;
     });
   }
   connectToQueue() {
-    this.authService.currentUser.subscribe((user) => {
-      this.socket.queue_officer({
-        ...user,
-        status: !this.officerSocketStatus ? 'waiting' : 'serving',
-      });
-      this.officerSocketStatus = !this.officerSocketStatus;
+    this.socket.queue_officer({
+      ...this.dataService.user,
+      status: !this.officerSocketStatus ? 'waiting' : 'serving',
     });
+    this.officerSocketStatus = !this.officerSocketStatus;
   }
   nextItem() {
     this.tmp.loading = true;
@@ -101,7 +100,7 @@ export class QueueOfficerComponent {
         if (res.status === 200) {
           this.dataService.menu = res.menu;
           this.socket.queue_next({
-            officer_id: this.user_symbol,
+            reception_number: this.user_symbol,
             next_number:
               this.dataService.menu[menu_idx].inner_menu[menu_sub_idx].queue
                 .current,

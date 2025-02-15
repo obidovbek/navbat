@@ -97,31 +97,33 @@
   <div class="oyna">OYNA</div>
   <div class="section2 b1">
     <span *ngIf="current_queues_loop[0]">{{
-      current_queues_loop[0].officer_id
+      current_queues_loop[0].reception_number
     }}</span>
   </div>
   <div class="section2 b2">
     <span *ngIf="current_queues_loop[1]">{{
-      current_queues_loop[1].officer_id
+      current_queues_loop[1].reception_number
     }}</span>
   </div>
   <div class="section2 b3">
     <span *ngIf="current_queues_loop[2]">{{
-      current_queues_loop[2].officer_id
+      current_queues_loop[2].reception_number
     }}</span>
   </div>
   <div class="section2 b4">
     <span *ngIf="current_queues_loop[3]">{{
-      current_queues_loop[3].officer_id
+      current_queues_loop[3].reception_number
     }}</span>
   </div>
   <div class="section2 b5">
     <span *ngIf="current_queues_loop[4]">{{
-      current_queues_loop[4].officer_id
+      current_queues_loop[4].reception_number
     }}</span>
   </div>
   <div class="section2 b6">
-    <span *ngIf="current_queues_new">{{ current_queues_new.officer_id }}</span>
+    <span *ngIf="current_queues_new">{{
+      current_queues_new.reception_number
+    }}</span>
   </div>
   <audio #myAudio>
     <source

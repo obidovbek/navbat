@@ -50,13 +50,13 @@ export async function findNextServiceOrder(menu, menuIndex, subMenuIndex) {
         for (const userDisplaySocketId of userDisplays) {
           console.log("next_service_display", {
             symbol: menu[menuIndex].symbol,
-            officer_id: officer.officer_id,
+            reception_number: officer.reception_number,
             next_number: menu[menuIndex].inner_menu[subMenuIndex].queue.current,
           });
 
           await io.to(userDisplaySocketId).emit("next_service_display", {
             symbol: menu[menuIndex].symbol,
-            officer_id: officer.officer_id,
+            reception_number: officer.reception_number,
             next_number: menu[menuIndex].inner_menu[subMenuIndex].queue.current,
           });
           await io.to(officer.socket_id).emit("next_service_officer", {
@@ -76,7 +76,7 @@ async function emitNextQueue(officer, menu, menuIndex, subMenuIndex, dbQueues) {
     symbol: menu[menuIndex].symbol,
     menuIndex,
     subMenuIndex,
-    officer_id: officer.officer_id,
+    reception_number: officer.reception_number,
     next_number: dbQueues.reduce(
       (sum, val) =>
         val.status === "served" &&

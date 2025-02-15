@@ -9576,6 +9576,27 @@ del {
   color: #aaaaaa;
   font-weight: 400;
 }
+.edit_icon {
+  font-size: initial;
+  font-family: FontAwesome;
+  text-decoration: none;
+}
+.edit_icon:before {
+  content: "";
+  color: green;
+}
+.delete_icon {
+  font-size: initial;
+  font-family: FontAwesome;
+  text-decoration: none;
+  margin-left: 10px;
+}
+.delete_icon:before {
+  content: "";
+  /* Unicode for the trash can icon */
+  color: #ff5370;
+  /* Color can be customized */
+}
 @-webkit-keyframes sidebar-menu-open {
   0% {
     transform: translate(0px, -50%) scale(1, 0);
@@ -9765,7 +9786,8 @@ a:hover {
 .btn-popup {
   margin-bottom: 30px;
 }
-.media-table table tr th:last-child, .media-table table tr td:last-child {
+.media-table table tr th:last-child,
+.media-table table tr td:last-child {
   text-align: left !important;
 }
 .ngx-charts {
@@ -9853,10 +9875,16 @@ ngb-datepicker .ngb-dp-weekday {
 ngb-datepicker .ngb-dp-weekdays {
   border-bottom: none !important;
 }
-ngb-datepicker .ngb-dp-arrow .btn-light, ngb-datepicker .ngb-dp-day .btn-light, ngb-datepicker .ngb-dp-week-number .btn-light, ngb-datepicker .ngb-dp-weekday .btn-light {
+ngb-datepicker .ngb-dp-arrow .btn-light,
+ngb-datepicker .ngb-dp-day .btn-light,
+ngb-datepicker .ngb-dp-week-number .btn-light,
+ngb-datepicker .ngb-dp-weekday .btn-light {
   font-size: 14px;
 }
-ngb-datepicker .ngb-dp-arrow .btn-link, ngb-datepicker .ngb-dp-day .btn-link, ngb-datepicker .ngb-dp-week-number .btn-link, ngb-datepicker .ngb-dp-weekday .btn-link {
+ngb-datepicker .ngb-dp-arrow .btn-link,
+ngb-datepicker .ngb-dp-day .btn-link,
+ngb-datepicker .ngb-dp-week-number .btn-link,
+ngb-datepicker .ngb-dp-weekday .btn-link {
   color: #007bff;
 }
 ngb-datepicker .ngb-dp-day .btn-light {
@@ -9865,7 +9893,8 @@ ngb-datepicker .ngb-dp-day .btn-light {
 ngb-datepicker .ngb-dp-day .bg-primary {
   background-color: #007bff !important;
 }
-.ngb-dp-header, .ngb-dp-weekdays.bg-light {
+.ngb-dp-header,
+.ngb-dp-weekdays.bg-light {
   background-color: #ffffff !important;
 }
 .vendor-list img {
@@ -9885,13 +9914,19 @@ ngb-datepicker .ngb-dp-day .bg-primary {
 .user-image .imgTable {
   border-radius: 100%;
 }
-.menu-list-table table tr th, .menu-list-table table tr td, .user-image table tr th, .user-image table tr td {
+.menu-list-table table tr th,
+.menu-list-table table tr td,
+.user-image table tr th,
+.user-image table tr td {
   text-align: center;
 }
-.media-datatable table tr th, .media-datatable table tr td {
+.media-datatable table tr th,
+.media-datatable table tr td {
   text-align: left !important;
 }
-.media-datatable table tr th:nth-child(2), .media-datatable table tr th:first-child, .media-datatable table tr td:nth-child(2), .media-datatable table tr td:first-child {
+.media-datatable table tr th:nth-child(2), .media-datatable table tr th:first-child,
+.media-datatable table tr td:nth-child(2),
+.media-datatable table tr td:first-child {
   text-align: center !important;
 }
 .ngx-datatable .datatable-body-cell {
@@ -9900,7 +9935,8 @@ ngb-datepicker .ngb-dp-day .bg-primary {
 ngx-datatable .datatable-header {
   padding: 0.75rem;
 }
-ngx-datatable.bootstrap .datatable-header, ngx-datatable.bootstrap .datatable-body {
+ngx-datatable.bootstrap .datatable-header,
+ngx-datatable.bootstrap .datatable-body {
   border: 1px solid #e8efff !important;
 }
 ng2-smart-table table {
@@ -9947,9 +9983,9 @@ ng2-smart-table table .ng2-smart-action-edit-cancel:before {
 }
 ng2-smart-table table .ng2-smart-action-delete-delete {
   /*      &:before {
-          content: "\f1f8";
-          color: #ff5370;
-        }*/
+    content: "\f1f8";
+    color: #ff5370;
+  }*/
 }
 ng2-smart-table table .ng2-smart-action-delete-delete .table_del_default_icon {
   font-size: initial;
@@ -9969,10 +10005,12 @@ ng2-smart-table table .ng2-smart-action-delete-delete .table_del_changed_icon:be
   content: "";
   color: #ff5370;
 }
-ng2-smart-table table tr th, ng2-smart-table table tr td {
+ng2-smart-table table tr th,
+ng2-smart-table table tr td {
   border: 1px solid #e8efff;
 }
-ng2-smart-table table tr th:last-child, ng2-smart-table table tr td:last-child {
+ng2-smart-table table tr th:last-child,
+ng2-smart-table table tr td:last-child {
   text-align: center;
 }
 ng2-smart-table table tr:nth-child(even) td {
@@ -9985,7 +10023,8 @@ ng2-smart-table ng2-smart-table-pager {
   margin-top: 30px;
   justify-content: flex-end !important;
 }
-ng2-smart-table .ng2-smart-pagination .page-link-next, ng2-smart-table .ng2-smart-pagination .page-link-prev {
+ng2-smart-table .ng2-smart-pagination .page-link-next,
+ng2-smart-table .ng2-smart-pagination .page-link-prev {
   font-size: 14px !important;
 }
 .page-item .page-link {
@@ -10121,7 +10160,8 @@ ng2-smart-table .ng2-smart-pagination .page-link-next, ng2-smart-table .ng2-smar
 .product-physical table .jsgrid-filter-row {
   display: none !important;
 }
-.product-physical table tr th:nth-child(2), .product-physical table tr td:nth-child(2) {
+.product-physical table tr th:nth-child(2),
+.product-physical table tr td:nth-child(2) {
   text-align: left;
 }
 .timer {
@@ -10141,7 +10181,8 @@ ng2-smart-table .ng2-smart-pagination .page-link-next, ng2-smart-table .ng2-smar
 .product-buttons {
   padding: 0;
 }
-.qty-box1 .input-group .btnGtr1, .qty-box1 .input-group .btnLess1 {
+.qty-box1 .input-group .btnGtr1,
+.qty-box1 .input-group .btnLess1 {
   padding: 12px;
   border: 1px solid #dddddd;
 }
@@ -10539,20 +10580,25 @@ ng2-smart-table .ng2-smart-pagination .page-link-next, ng2-smart-table .ng2-smar
   letter-spacing: 0.1em;
   z-index: 1;
 }
-.products-admin .product-box .product-detail .rating, .products-admin .product-box .product-info .rating {
+.products-admin .product-box .product-detail .rating,
+.products-admin .product-box .product-info .rating {
   margin-top: 15px;
 }
-.products-admin .product-box .product-detail .rating i, .products-admin .product-box .product-info .rating i {
+.products-admin .product-box .product-detail .rating i,
+.products-admin .product-box .product-info .rating i {
   padding-right: 5px;
   color: #ffa200;
 }
-.products-admin .product-box .product-detail .rating i:last-child, .products-admin .product-box .product-info .rating i:last-child {
+.products-admin .product-box .product-detail .rating i:last-child,
+.products-admin .product-box .product-info .rating i:last-child {
   color: #dddddd;
 }
-.products-admin .product-box .product-detail a:hover, .products-admin .product-box .product-info a:hover {
+.products-admin .product-box .product-detail a:hover,
+.products-admin .product-box .product-info a:hover {
   text-decoration: none;
 }
-.products-admin .product-box .product-detail h6, .products-admin .product-box .product-info h6 {
+.products-admin .product-box .product-detail h6,
+.products-admin .product-box .product-info h6 {
   line-height: 1;
   margin-bottom: 0;
   padding-top: 2px;
@@ -10560,7 +10606,8 @@ ng2-smart-table .ng2-smart-pagination .page-link-next, ng2-smart-table .ng2-smar
   transition: all 0.5s ease;
   font-size: 16px;
 }
-.products-admin .product-box .product-detail h4, .products-admin .product-box .product-info h4 {
+.products-admin .product-box .product-detail h4,
+.products-admin .product-box .product-info h4 {
   font-size: 18px;
   color: #222222;
   font-weight: 700;
@@ -10722,7 +10769,8 @@ ng2-smart-table .ng2-smart-pagination .page-link-next, ng2-smart-table .ng2-smar
   font-weight: 700;
   margin-bottom: 0;
 }
-#carousel-container > .current-figure > #current-image, #carousel-container > .current-figure > #current-image-legacy {
+#carousel-container > .current-figure > #current-image,
+#carousel-container > .current-figure > #current-image-legacy {
   margin-bottom: 30px;
 }
 .product-page-main .product-slider .owl-stage-outer {
@@ -10740,12 +10788,14 @@ ng2-smart-table .ng2-smart-pagination .page-link-next, ng2-smart-table .ng2-smar
 .br-theme-fontawesome-stars-o .br-widget a {
   color: #ffa800;
 }
-.br-theme-fontawesome-stars-o .br-widget a .br-selected, .br-theme-fontawesome-stars-o .br-widget a .br-active:after {
+.br-theme-fontawesome-stars-o .br-widget a .br-selected,
+.br-theme-fontawesome-stars-o .br-widget a .br-active:after {
   color: #ffa800;
   font: normal normal normal 14px/1 FontAwesome;
 }
 .nav-pills .nav-link.active,
-.nav-pills .nav-link > .nav-link, .nav-pills .show.active,
+.nav-pills .nav-link > .nav-link,
+.nav-pills .show.active,
 .nav-pills .show > .nav-link {
   background-color: #007bff;
 }
@@ -10818,7 +10868,8 @@ ng2-smart-table .ng2-smart-pagination .page-link-next, ng2-smart-table .ng2-smar
 .profile-table table tbody tr td:first-child {
   min-width: 250px;
 }
-.profile-table table th, .profile-table table td {
+.profile-table table th,
+.profile-table table td {
   border-top: none;
 }
 .report-employee .card-header {
@@ -10830,7 +10881,10 @@ ng2-smart-table .ng2-smart-pagination .page-link-next, ng2-smart-table .ng2-smar
 .sales-chart {
   height: 307px;
 }
-.sales-chart svg .ct-series-b .ct-point, .sales-chart svg .ct-series-b .ct-line, .sales-chart svg .ct-series-b .ct-bar, .sales-chart svg .ct-series-b .ct-slice-donut {
+.sales-chart svg .ct-series-b .ct-point,
+.sales-chart svg .ct-series-b .ct-line,
+.sales-chart svg .ct-series-b .ct-bar,
+.sales-chart svg .ct-series-b .ct-slice-donut {
   stroke: #a5a5a5;
 }
 .expense-chart #area-chart1 {
@@ -10972,7 +11026,8 @@ footer.blockquote-footer {
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
 }
-.transcation-datatable table th:nth-child(2), .transcation-datatable table td:nth-child(2) {
+.transcation-datatable table th:nth-child(2),
+.transcation-datatable table td:nth-child(2) {
   text-align: center !important;
 }
 .badge-warning {
@@ -11016,7 +11071,9 @@ div.dataTables_wrapper div.dataTables_paginate {
   width: 100%;
   overflow-x: auto;
 }
-.dataTables_wrapper table.dataTable.row-border tbody th, .dataTables_wrapper table.dataTable.row-border tbody td, .dataTables_wrapper table.dataTable.display tbody th, .dataTables_wrapper table.dataTable.display tbody td {
+.dataTables_wrapper table.dataTable.row-border tbody th,
+.dataTables_wrapper table.dataTable.row-border tbody td, .dataTables_wrapper table.dataTable.display tbody th,
+.dataTables_wrapper table.dataTable.display tbody td {
   border-top: 1px solid #ebf1ff !important;
 }
 .dataTables_wrapper table.dataTable tbody tr {
@@ -11046,28 +11103,47 @@ div.dataTables_wrapper div.dataTables_paginate {
   background-color: #f1f4fb !important;
   padding: 24px 0.75rem !important;
 }
-.dataTables_wrapper table.dataTable thead .sorting:before, .dataTables_wrapper table.dataTable thead .sorting:after, .dataTables_wrapper table.dataTable thead .sorting_asc:before, .dataTables_wrapper table.dataTable thead .sorting_asc:after, .dataTables_wrapper table.dataTable thead .sorting_desc:before, .dataTables_wrapper table.dataTable thead .sorting_desc:after, .dataTables_wrapper table.dataTable thead .sorting_asc_disabled:before, .dataTables_wrapper table.dataTable thead .sorting_asc_disabled:after, .dataTables_wrapper table.dataTable thead .sorting_desc_disabled:before, .dataTables_wrapper table.dataTable thead .sorting_desc_disabled:after {
+.dataTables_wrapper table.dataTable thead .sorting:before, .dataTables_wrapper table.dataTable thead .sorting:after,
+.dataTables_wrapper table.dataTable thead .sorting_asc:before,
+.dataTables_wrapper table.dataTable thead .sorting_asc:after,
+.dataTables_wrapper table.dataTable thead .sorting_desc:before,
+.dataTables_wrapper table.dataTable thead .sorting_desc:after,
+.dataTables_wrapper table.dataTable thead .sorting_asc_disabled:before,
+.dataTables_wrapper table.dataTable thead .sorting_asc_disabled:after,
+.dataTables_wrapper table.dataTable thead .sorting_desc_disabled:before,
+.dataTables_wrapper table.dataTable thead .sorting_desc_disabled:after {
   bottom: 25px;
 }
-.category-table table tr td, .category-table table tr th {
+.category-table table tr td,
+.category-table table tr th {
   text-align: center;
 }
-.category-table table tr td:nth-child(2), .category-table table tr th:nth-child(2) {
+.category-table table tr td:nth-child(2),
+.category-table table tr th:nth-child(2) {
   text-align: left;
 }
-.order-table table tr td:nth-child(3), .order-table table tr th:nth-child(3) {
+.order-table table tr td:nth-child(3),
+.order-table table tr th:nth-child(3) {
   text-align: center;
 }
-.product-list table tr td, .product-list table tr th, .report-table table tr td, .report-table table tr th {
+.product-list table tr td,
+.product-list table tr th,
+.report-table table tr td,
+.report-table table tr th {
   text-align: left !important;
 }
-.product-list table tr td:last-child, .product-list table tr th:last-child, .report-table table tr td:last-child, .report-table table tr th:last-child {
+.product-list table tr td:last-child,
+.product-list table tr th:last-child,
+.report-table table tr td:last-child,
+.report-table table tr th:last-child {
   text-align: center !important;
 }
-.product-list table .jsgrid-filter-row, .report-table table .jsgrid-filter-row {
+.product-list table .jsgrid-filter-row,
+.report-table table .jsgrid-filter-row {
   display: none !important;
 }
-.product-list table .jsgrid-cell, .report-table table .jsgrid-cell {
+.product-list table .jsgrid-cell,
+.report-table table .jsgrid-cell {
   padding: 0.75rem;
 }
 .jsgrid-pager {
@@ -11814,7 +11890,8 @@ input:focus {
 .page-main-header .main-header-right svg {
   color: #007bff;
 }
-.page-main-header .main-header-right svg line, .page-main-header .main-header-right svg polyline {
+.page-main-header .main-header-right svg line,
+.page-main-header .main-header-right svg polyline {
   color: #007bff;
 }
 .page-main-header .main-header-right .nav-left i {
@@ -12097,7 +12174,9 @@ input:focus {
 .page-main-header .main-header-right .nav-right .profile-dropdown li:hover a svg {
   color: #007bff !important;
 }
-.page-main-header .main-header-right .nav-right .profile-dropdown li:hover a svg path, .page-main-header .main-header-right .nav-right .profile-dropdown li:hover a svg line, .page-main-header .main-header-right .nav-right .profile-dropdown li:hover a svg polyline {
+.page-main-header .main-header-right .nav-right .profile-dropdown li:hover a svg path,
+.page-main-header .main-header-right .nav-right .profile-dropdown li:hover a svg line,
+.page-main-header .main-header-right .nav-right .profile-dropdown li:hover a svg polyline {
   color: #007bff !important;
 }
 .page-main-header .main-header-right .nav-right .profile-dropdown li a {
@@ -12155,13 +12234,16 @@ ul.notification-dropdown.onhover-show-div li span svg {
   margin-right: 10px;
   vertical-align: text-top;
 }
-ul.notification-dropdown.onhover-show-div li span .shopping-color path, ul.notification-dropdown.onhover-show-div li span .shopping-color line {
+ul.notification-dropdown.onhover-show-div li span .shopping-color path,
+ul.notification-dropdown.onhover-show-div li span .shopping-color line {
   color: #007bff;
 }
-ul.notification-dropdown.onhover-show-div li span .download-color path, ul.notification-dropdown.onhover-show-div li span .download-color line {
+ul.notification-dropdown.onhover-show-div li span .download-color path,
+ul.notification-dropdown.onhover-show-div li span .download-color line {
   color: #81ba00;
 }
-ul.notification-dropdown.onhover-show-div li span .alert-color path, ul.notification-dropdown.onhover-show-div li span .alert-color line {
+ul.notification-dropdown.onhover-show-div li span .alert-color path,
+ul.notification-dropdown.onhover-show-div li span .alert-color line {
   color: #a5a5a5;
 }
 ul.notification-dropdown.onhover-show-div li p {
@@ -12180,7 +12262,8 @@ ul.notification-dropdown.onhover-show-div li + li:hover {
 .onhover-show-div li a svg {
   margin-top: 0 !important;
 }
-.onhover-show-div li a svg path, .onhover-show-div li a svg line {
+.onhover-show-div li a svg path,
+.onhover-show-div li a svg line {
   color: #313131 !important;
 }
 /**======Main Header css Ends ======**/
@@ -14466,7 +14549,8 @@ table tbody .border-bottom-warning td {
 .call-chat-sidebar {
   max-width: 320px;
 }
-.call-chat-sidebar .card .card-body, .chat-body .card .card-body {
+.call-chat-sidebar .card .card-body,
+.chat-body .card .card-body {
   padding: 15px;
 }
 /**=====================
@@ -14701,7 +14785,8 @@ table tbody .border-bottom-warning td {
 .license-key[disabled] {
   cursor: not-allowed;
 }
-.jsgrid-cell, .jsgrid-grid-body {
+.jsgrid-cell,
+.jsgrid-grid-body {
   border: 1px solid #ebf1ff;
 }
 .jsgrid .jsgrid-pager-container {
@@ -14867,7 +14952,8 @@ table tbody .border-bottom-warning td {
     font-size: 10px;
   }
 
-  .order-responsive datatable-body-cell, .order-responsive datatable-header-cell {
+  .order-responsive datatable-body-cell,
+.order-responsive datatable-header-cell {
     width: 160px !important;
   }
   .order-responsive .datatable-row-center {
@@ -14884,7 +14970,8 @@ table tbody .border-bottom-warning td {
     height: 360px !important;
   }
 
-  .user-image table tr th:nth-child(6), .user-image table tr td:nth-child(6) {
+  .user-image table tr th:nth-child(6),
+.user-image table tr td:nth-child(6) {
     width: 300px !important;
   }
 
@@ -14900,7 +14987,8 @@ table tbody .border-bottom-warning td {
     margin-top: 30px;
   }
 
-  .chart-vertical-center #myDoughnutGraph, .chart-vertical-center #myPolarGraph {
+  .chart-vertical-center #myDoughnutGraph,
+.chart-vertical-center #myPolarGraph {
     height: 180px !important;
   }
 
@@ -14908,41 +14996,51 @@ table tbody .border-bottom-warning td {
     margin-top: 30px;
   }
 
-  .user-list table tr td:nth-child(5), .user-list table tr th:nth-child(5) {
+  .user-list table tr td:nth-child(5),
+.user-list table tr th:nth-child(5) {
     width: 195px !important;
   }
 
-  .translation-list table tr td, .translation-list table tr th {
+  .translation-list table tr td,
+.translation-list table tr th {
     width: 162px !important;
   }
-  .translation-list table tr td:first-child, .translation-list table tr td:nth-child(2), .translation-list table tr th:first-child, .translation-list table tr th:nth-child(2) {
+  .translation-list table tr td:first-child, .translation-list table tr td:nth-child(2),
+.translation-list table tr th:first-child,
+.translation-list table tr th:nth-child(2) {
     width: 274px !important;
   }
 
   .order-datatable table {
     display: block;
   }
-  .order-datatable table tr th, .order-datatable table tr td {
+  .order-datatable table tr th,
+.order-datatable table tr td {
     min-width: 121px;
   }
-  .order-datatable table tr th:nth-child(2), .order-datatable table tr td:nth-child(2) {
+  .order-datatable table tr th:nth-child(2),
+.order-datatable table tr td:nth-child(2) {
     min-width: 150px;
   }
 
   .vendor-table table {
     display: block;
   }
-  .vendor-table table tr th, .vendor-table table tr td {
+  .vendor-table table tr th,
+.vendor-table table tr td {
     min-width: 112px;
   }
-  .vendor-table table tr th:first-child, .vendor-table table tr td:first-child {
+  .vendor-table table tr th:first-child,
+.vendor-table table tr td:first-child {
     min-width: 150px;
   }
 
-  .media-table table tr th:nth-child(3), .media-table table tr td:nth-child(3) {
+  .media-table table tr th:nth-child(3),
+.media-table table tr td:nth-child(3) {
     width: 146px !important;
   }
-  .media-table table tr th:last-child, .media-table table tr td:last-child {
+  .media-table table tr th:last-child,
+.media-table table tr td:last-child {
     width: 248px !important;
   }
 }
@@ -14955,46 +15053,58 @@ table tbody .border-bottom-warning td {
     margin-top: 30px;
   }
 
-  .menu-list-table table tr th, .menu-list-table table tr td {
+  .menu-list-table table tr th,
+.menu-list-table table tr td {
     width: 300px !important;
   }
 
-  .product-physical table tr th, .product-physical table tr td {
+  .product-physical table tr th,
+.product-physical table tr td {
     width: 70px !important;
   }
-  .product-physical table tr th:nth-child(2), .product-physical table tr td:nth-child(2) {
+  .product-physical table tr th:nth-child(2),
+.product-physical table tr td:nth-child(2) {
     width: 173px !important;
   }
-  .product-physical table tr th:nth-child(5), .product-physical table tr td:nth-child(5) {
+  .product-physical table tr th:nth-child(5),
+.product-physical table tr td:nth-child(5) {
     width: 100px !important;
   }
 
-  .category-table table tr td, .category-table table tr th {
+  .category-table table tr td,
+.category-table table tr th {
     width: 120px !important;
   }
-  .category-table table tr td:nth-child(2), .category-table table tr th:nth-child(2) {
+  .category-table table tr td:nth-child(2),
+.category-table table tr th:nth-child(2) {
     width: 500px !important;
   }
 
-  .media-table table tr td:last-child, .media-table table tr th:last-child {
+  .media-table table tr td:last-child,
+.media-table table tr th:last-child {
     width: 370px !important;
   }
 
-  .order-table table tr td:nth-child(4), .order-table table tr th:nth-child(4) {
+  .order-table table tr td:nth-child(4),
+.order-table table tr th:nth-child(4) {
     width: 230px !important;
   }
 
-  .user-list table tr th, .user-list table tr td {
+  .user-list table tr th,
+.user-list table tr td {
     width: 200px !important;
   }
 
-  .transactions table tr td:nth-child(4), .transactions table tr th:nth-child(4) {
+  .transactions table tr td:nth-child(4),
+.transactions table tr th:nth-child(4) {
     width: 100px !important;
   }
-  .transactions table tr td:first-child, .transactions table tr th:first-child {
+  .transactions table tr td:first-child,
+.transactions table tr th:first-child {
     width: 100px !important;
   }
-  .transactions table tr td:nth-child(2), .transactions table tr th:nth-child(2) {
+  .transactions table tr td:nth-child(2),
+.transactions table tr th:nth-child(2) {
     width: 150px !important;
   }
 }
@@ -15009,7 +15119,8 @@ table tbody .border-bottom-warning td {
     flex: 0 0 50%;
   }
 
-  .product-adding .col-xl-5, .product-adding .col-xl-7 {
+  .product-adding .col-xl-5,
+.product-adding .col-xl-7 {
     flex: 0 0 100%;
     max-width: 100%;
   }
@@ -15017,19 +15128,23 @@ table tbody .border-bottom-warning td {
     margin-top: 30px;
   }
 
-  .category-table table tr td:first-child, .category-table table tr th:first-child {
+  .category-table table tr td:first-child,
+.category-table table tr th:first-child {
     width: 90px !important;
   }
 
-  .order-table table tr td:nth-child(2), .order-table table tr th:nth-child(2) {
+  .order-table table tr td:nth-child(2),
+.order-table table tr th:nth-child(2) {
     width: 70px !important;
   }
 
-  .user-list table tr td:first-child, .user-list table tr th:first-child {
+  .user-list table tr td:first-child,
+.user-list table tr th:first-child {
     width: 130px !important;
   }
 
-  .profile-table table tr th, .profile-table table tr td {
+  .profile-table table tr th,
+.profile-table table tr td {
     width: 200px !important;
   }
 }
@@ -15070,10 +15185,12 @@ table tbody .border-bottom-warning td {
     margin-top: 20px;
   }
 
-  .card .card-body, .card .card-header {
+  .card .card-body,
+.card .card-header {
     padding: 20px;
   }
-  .card .card-body .card-header-right, .card .card-header .card-header-right {
+  .card .card-body .card-header-right,
+.card .card-header .card-header-right {
     right: 11px;
     top: 15px;
   }
@@ -15183,7 +15300,8 @@ table tbody .border-bottom-warning td {
     margin-left: 0;
   }
 
-  #carousel-container > .current-figure > #current-image, #carousel-container > .current-figure > #current-image-legacy {
+  #carousel-container > .current-figure > #current-image,
+#carousel-container > .current-figure > #current-image-legacy {
     margin-bottom: 20px;
   }
 
@@ -15229,7 +15347,8 @@ table tbody .border-bottom-warning td {
     height: 312px !important;
   }
 
-  .transcation-datatable table th:nth-child(3), .transcation-datatable table td:nth-child(3) {
+  .transcation-datatable table th:nth-child(3),
+.transcation-datatable table td:nth-child(3) {
     width: 230px !important;
   }
 }
@@ -15245,10 +15364,12 @@ table tbody .border-bottom-warning td {
     padding-left: 0;
   }
 
-  .authentication-box .form-footer, .authentication-box .form-button {
+  .authentication-box .form-footer,
+.authentication-box .form-button {
     text-align: center;
   }
-  .authentication-box .form-footer > span, .authentication-box .form-button > span {
+  .authentication-box .form-footer > span,
+.authentication-box .form-button > span {
     padding: 0;
     left: 0;
     right: 0;
@@ -15262,7 +15383,8 @@ table tbody .border-bottom-warning td {
     padding: 0 15px;
   }
 
-  .created-width table tr th:last-child, .created-width table tr td:last-child {
+  .created-width table tr th:last-child,
+.created-width table tr td:last-child {
     width: 200px !important;
   }
 
@@ -15275,10 +15397,12 @@ table tbody .border-bottom-warning td {
     width: 40%;
   }
 
-  .products-table table tr td:first-child, .products-table table tr th:first-child {
+  .products-table table tr td:first-child,
+.products-table table tr th:first-child {
     min-width: 280px;
   }
-  .products-table table tr td:nth-child(3), .products-table table tr th:nth-child(3) {
+  .products-table table tr td:nth-child(3),
+.products-table table tr th:nth-child(3) {
     min-width: 110px;
   }
 
@@ -15301,14 +15425,17 @@ table tbody .border-bottom-warning td {
     text-align: center !important;
   }
 
-  .product-physical table tr th, .product-physical table tr td {
+  .product-physical table tr th,
+.product-physical table tr td {
     width: 90px !important;
   }
-  .product-physical table tr th:nth-child(2), .product-physical table tr td:nth-child(2) {
+  .product-physical table tr th:nth-child(2),
+.product-physical table tr td:nth-child(2) {
     width: 196px !important;
   }
 
-  .add-product-form .form-group .form-control, .add-product-form .form-group select {
+  .add-product-form .form-group .form-control,
+.add-product-form .form-group select {
     width: 100% !important;
     margin: 0 !important;
   }
@@ -15332,18 +15459,21 @@ table tbody .border-bottom-warning td {
   .digital-add textarea {
     margin: 0 !important;
   }
-  .digital-add .form-group select, .digital-add .form-group .form-control {
+  .digital-add .form-group select,
+.digital-add .form-group .form-control {
     width: 100% !important;
   }
   .digital-add .form-group label {
     margin-bottom: 0 !important;
   }
 
-  .digital-product table tr th, .digital-product table tr td {
+  .digital-product table tr th,
+.digital-product table tr td {
     width: 120px !important;
   }
 
-  .report-table table tr th, .report-table table tr td {
+  .report-table table tr th,
+.report-table table tr td {
     width: 150px !important;
   }
 
@@ -15351,7 +15481,8 @@ table tbody .border-bottom-warning td {
     margin-left: 0;
     margin-right: 0;
   }
-  .needs-validation .form-group .form-control, .needs-validation .form-group select {
+  .needs-validation .form-group .form-control,
+.needs-validation .form-group select {
     width: 95%;
     margin: 0 auto;
   }
@@ -15375,7 +15506,8 @@ table tbody .border-bottom-warning td {
     float: none !important;
     margin-top: 20px !important;
   }
-  .dataTables_wrapper .dataTables_length label, .dataTables_wrapper .dataTables_filter label {
+  .dataTables_wrapper .dataTables_length label,
+.dataTables_wrapper .dataTables_filter label {
     float: none !important;
   }
   .dataTables_wrapper table.dataTable {
@@ -15400,7 +15532,8 @@ table tbody .border-bottom-warning td {
     margin-right: 15px;
   }
 
-  .created-width table tr th:last-child, .created-width table tr td:last-child {
+  .created-width table tr th:last-child,
+.created-width table tr td:last-child {
     width: 250px !important;
   }
 
@@ -15408,7 +15541,8 @@ table tbody .border-bottom-warning td {
     width: 56% !important;
   }
 
-  .ng2-smart-filter input, .ng2-smart-filter select {
+  .ng2-smart-filter input,
+.ng2-smart-filter select {
     width: 100% !important;
   }
 
@@ -15465,7 +15599,8 @@ table tbody .border-bottom-warning td {
     padding: 15px;
   }
 
-  .sm-order-space, .xl-space {
+  .sm-order-space,
+.xl-space {
     margin-top: 15px;
   }
 
@@ -15564,7 +15699,8 @@ table tbody .border-bottom-warning td {
     padding-bottom: 20px !important;
   }
 
-  #carousel-container > .current-figure > #current-image, #carousel-container > .current-figure > #current-image-legacy {
+  #carousel-container > .current-figure > #current-image,
+#carousel-container > .current-figure > #current-image-legacy {
     margin-bottom: 15px;
   }
 
@@ -15636,21 +15772,27 @@ table tbody .border-bottom-warning td {
     display: grid;
   }
 
-  .translation-list table tr td:nth-child(3), .translation-list table tr td:nth-child(4), .translation-list table tr th:nth-child(3), .translation-list table tr th:nth-child(4) {
+  .translation-list table tr td:nth-child(3), .translation-list table tr td:nth-child(4),
+.translation-list table tr th:nth-child(3),
+.translation-list table tr th:nth-child(4) {
     width: 180px !important;
   }
 
-  .product-list table tr td, .product-list table tr th {
+  .product-list table tr td,
+.product-list table tr th {
     width: 100px !important;
   }
-  .product-list table tr td:nth-child(2), .product-list table tr th:nth-child(2) {
+  .product-list table tr td:nth-child(2),
+.product-list table tr th:nth-child(2) {
     width: 250px !important;
   }
-  .product-list table tr td:nth-child(3), .product-list table tr th:nth-child(3) {
+  .product-list table tr td:nth-child(3),
+.product-list table tr th:nth-child(3) {
     width: 120px !important;
   }
 
-  .digital-product table tr td:nth-child(2), .digital-product table tr th:nth-child(2) {
+  .digital-product table tr td:nth-child(2),
+.digital-product table tr th:nth-child(2) {
     width: 120px !important;
   }
 
@@ -15679,7 +15821,8 @@ table tbody .border-bottom-warning td {
     top: 184px !important;
   }
 
-  .add-product ul li .box-input-file, .add-product ul li .imgUpload {
+  .add-product ul li .box-input-file,
+.add-product ul li .imgUpload {
     width: 30px;
     height: 30px;
   }

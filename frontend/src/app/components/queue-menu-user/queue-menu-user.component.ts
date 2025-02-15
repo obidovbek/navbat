@@ -51,8 +51,12 @@ export class QueueMenuUserComponent implements OnInit {
     return this.dataService.menu[this.dataService.selected.index].inner_menu;
   }
   openDialog(): void {
-    // this.dialogContent = this.queuePrintContent();
-    this.isDialogVisible = true;
+    console.log(environment.otm);
+    if (environment.otm === 'tkti') {
+      this.isDialogVisible = true;
+      return;
+    }
+    this.dialogContent = this.queuePrintContent();
   }
 
   closeDialog(): void {
@@ -94,8 +98,9 @@ export class QueueMenuUserComponent implements OnInit {
         this.queue_differ =
           selectedService.queue.overall - selectedService.queue.current;
         this.service_name = selectedService[this.lang];
-
-        // this.printElem(document.getElementById('queue_print').innerHTML);
+        if (environment.otm !== 'tkti') {
+          this.printElem(document.getElementById('queue_print').innerHTML);
+        }
         localStorage.setItem(
           'changes',
           JSON.stringify(this.dataService.changes)
